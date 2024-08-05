@@ -39,12 +39,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         const userRelatedData: unknownObjProps<string | number | unknown[]> = {}
 
-      const cartItems = await BasketItemModel
-        .find({ userID: userData._id })
-        .populate('productID') // Ensure 'productID' is correctly named in your schema
-        .exec();
+    //   const cartItems = await BasketItemModel
+    //     .find({ userID: userData._id })
+    //     .populate('productID') // Ensure 'productID' is correctly named in your schema
+    //     .exec();
 
-        console.log("ISERIDDDDD>?>?>?>?>" , userData?._id , cartItems)
+    //     console.log("ISERIDDDDD>?>?>?>?>" , userData?._id , cartItems)
 
         mongoose.set('strictPopulate', false); // if the 'productID' didn't exist to populate, we won't get any error
         let populatedData;
@@ -71,7 +71,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             userRelatedData.dashboardNotifications = adminNotifications
         }
 
-        return res.status(200).json({ cartItems,userData, userRelatedData })
+        return res.status(200).json({ userData, userRelatedData })
 
     } catch (err) {
         console.log(err)
