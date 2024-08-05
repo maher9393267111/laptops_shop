@@ -12,9 +12,9 @@ const Product = ({ data, productUpdater, productEditor }: { data: productDataTyp
     const deleteProduct = () => {
         dispatch(modalDataUpdater({
             isShown: true,
-            message: 'آیا از حذف این محصول اطمینان دارید؟',
+            message: 'آیا از حذف این المنتج اطمینان دارید؟',
             status: false,
-            title: 'حذف محصول',
+            title: 'حذف المنتج',
 
             fn: async () => {
                 try {

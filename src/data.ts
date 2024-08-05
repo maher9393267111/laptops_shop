@@ -21,7 +21,7 @@ const chartColors = {
     }
 }
 
-type WeekDays = 'دوشنبه' | 'سه‌شنبه' | 'چهارشنبه' | 'پنج‌شنبه' | 'جمعه' | 'شنبه' | 'یکشنبه'
+type WeekDays = 'الاثنين' | 'الثلاثاء' | 'الاربعاء' | 'الخميس' | 'الجمعة' | 'السبت' | 'الاحد'
 
 export interface weekDaysChartProps {
     name: WeekDays,
@@ -30,31 +30,31 @@ export interface weekDaysChartProps {
 
 let weekDaysChart: weekDaysChartProps[] = [
     {
-        name: 'شنبه',
+        name: 'السبت',
         uv: 0,
     },
     {
-        name: 'یکشنبه',
+        name: 'الاحد',
         uv: 0,
     },
     {
-        name: 'دوشنبه',
+        name: 'الاثنين',
         uv: 0,
     },
     {
-        name: 'سه‌شنبه',
+        name: 'الثلاثاء',
         uv: 0,
     },
     {
-        name: 'چهارشنبه',
+        name: 'الاربعاء',
         uv: 0,
     },
     {
-        name: 'پنج‌شنبه',
+        name: 'الخميس',
         uv: 0,
     },
     {
-        name: 'جمعه',
+        name: 'الجمعة',
         uv: 0,
     },
 ];

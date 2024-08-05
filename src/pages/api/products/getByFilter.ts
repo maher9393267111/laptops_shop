@@ -19,6 +19,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     try {
 
+        console.log("filterBYYYYYYYY" ,filterBy)
+
         const isCategoryValid = ['accessory', 'pc', 'parts', 'laptop', 'console'].find(cat => cat == category)
         if (!isCategoryValid?.length) return res.status(421).json({ message: 'its not a valid category name bro' })
 

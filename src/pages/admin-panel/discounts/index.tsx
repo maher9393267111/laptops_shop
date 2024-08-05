@@ -29,15 +29,15 @@ const DiscountCodes = () => {
 
         const { code, maxUse, value } = newDiscountData;
 
-        if (!code?.trim().length) return showToast(false, 'یک شناسه معتبر انتخاب کنید')
+        if (!code?.trim().length) return showToast(false, 'یک رمز التعريف معتبر انتخاب کنید')
         if (!value || isNaN(value) || value <= 0) return showToast(false, 'فیلد "مقدار تخفیف" یک عدد بزرگتر از صفر است', 3500)
-        if (!maxUse || isNaN(maxUse) || maxUse <= 0) return showToast(false, 'فیلد "حداکثر استفاده" یک عدد بزرگتر از صفر است', 3500)
+        if (!maxUse || isNaN(maxUse) || maxUse <= 0) return showToast(false, 'فیلد "الاستخدام الأقصى" یک عدد بزرگتر از صفر است', 3500)
 
         dispatch(modalDataUpdater({
             isShown: true,
-            message: `آیا از ایجاد کد تخفیف با کد ${code} و با ارزش ${Number(value).toLocaleString('fa-IR') + ' تومان'} با حداکثر استفاده ${maxUse} مطمان هستید؟`,
+            message: `آیا از ایجاد کد تخفیف با کد ${code} و با ارزش ${Number(value).toLocaleString('fa-IR') + ' تومان'} با الاستخدام الأقصى ${maxUse} مطمان هستید؟`,
             status: false,
-            title: 'افزودن کد تخفیف جدید',
+            title: 'إضافة رمز الخصم جدید',
 
             fn: async () => {
 
@@ -104,8 +104,8 @@ const DiscountCodes = () => {
         <Layout>
             <>
                 <div className="flex items-center justify-between">
-                    <h3 className='md:text-[26px] text-[17px] font-peyda font-bold text-panel-darkBlue'>مدریت کد های تخفیف</h3>
-                    <div onClick={() => setShowAddNewProduct(prev => !prev)} className={`p-3 ${showAddNewProduct ? 'bg-panel-darkRed' : 'bg-panel-darkGreen'} text-center cursor-pointer w-44 whitespace-nowrap font-peyda px-5 flex-center text-white bg-panel-darkGreen rounded-md`}>{showAddNewProduct ? 'لغو' : 'ایجاد کد تخفیف جدید'}</div>
+                    <h3 className='md:text-[26px] text-[17px] font-peyda font-bold text-panel-darkBlue'>إدارة رموز الخصم</h3>
+                    <div onClick={() => setShowAddNewProduct(prev => !prev)} className={`p-3 ${showAddNewProduct ? 'bg-panel-darkRed' : 'bg-panel-darkGreen'} text-center cursor-pointer w-44 whitespace-nowrap font-peyda px-5 flex-center text-white bg-panel-darkGreen rounded-md`}>{showAddNewProduct ? 'الغاء' : 'انشاء رمز خصم جديد'}</div>
                 </div>
 
                 {
@@ -116,7 +116,7 @@ const DiscountCodes = () => {
                             <div className='grid sm:grid-cols-3 grid-cols-1 sm:gap-3 gap-7 font-peyda pt-0'>
 
                                 <div className='flex gap-2 flex-col text-panel-darkTitle'>
-                                    <p>شناسه تخفیف</p>
+                                    <p>رمز الخصم</p>
                                     <input
                                         onChange={e => newDiscountDataUpdater('code', e.target.value)}
                                         placeholder='1M-SummerOff'
@@ -126,7 +126,7 @@ const DiscountCodes = () => {
                                 </div>
 
                                 <div className='flex gap-2 flex-col text-panel-darkTitle'>
-                                    <p>مقدار تخفیف(تومان)</p>
+                                    <p>مبلغ الخصم</p>
                                     <input
                                         onChange={e => newDiscountDataUpdater('value', e.target.value)}
                                         placeholder='1000000T'
@@ -136,7 +136,7 @@ const DiscountCodes = () => {
                                 </div>
 
                                 <div className='flex gap-2 flex-col text-panel-darkTitle'>
-                                    <p>حداکثر استفاده</p>
+                                    <p>الاستخدام الأقصى</p>
                                     <input
                                         onChange={e => newDiscountDataUpdater('maxUse', e.target.value)}
                                         placeholder='12'
@@ -145,7 +145,7 @@ const DiscountCodes = () => {
                                     />
                                 </div>
 
-                                <button name='create new discount' onClick={createDiscount} className='p-3 flex-center text-center border-2 border-panel-darkBlue bg-panel-lightBlue rounded-md'>افزودن کد تخفیف</button>
+                                <button name='create new discount' onClick={createDiscount} className='p-3 flex-center text-center border-2 border-panel-darkBlue bg-panel-lightBlue rounded-md'>إضافة رمز الخصم</button>
                                 <span></span>
                                 <span></span>
 
@@ -164,11 +164,11 @@ const DiscountCodes = () => {
 
                         <thead>
                             <tr className='font-peyda md:text-[18px] sm:text-[16px] text-[14px] text-center w-full ch:bg-white ch:py-2 ch:text-panel-darkTitle'>
-                                <td>شماره</td>
-                                <td>شناسه</td>
-                                <td>ارزش(تومان)</td>
-                                <td>حداکثر استفاده</td>
-                                <td>دفعات استفاده شده</td>
+                                <td>رمز التعريف</td>
+                                <td>رمز التعريف</td>
+                                <td>قيمة الخصم</td>
+                                <td>الاستخدام الأقصى</td>
+                                <td>عدد مرات الاستعمال</td>
                                 <td>حذف</td>
                             </tr>
                         </thead>

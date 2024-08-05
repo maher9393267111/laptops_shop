@@ -98,7 +98,7 @@ const InfiniteScroll = ({ itemsArray, showLoader }: InfiniteScrollProps) => {
                         >
                             <Button
                                 filled
-                                text={!showLoader ? '' : 'تمام محصولات نمایش داده شده'}
+                                text={!showLoader ? '' : 'تمام المنتجات نمایش داده شده'}
                                 Icon={!showLoader ? <Loader /> : <></>} size="md"
                             />
                         </div>

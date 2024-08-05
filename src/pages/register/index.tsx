@@ -80,8 +80,8 @@ const Register = () => {
 
                 <form className="bg-title-text relative pt-12 rounded-tl-[40px] px-2 bottom-12">
 
-                    <FormInput id="username" label="نام کاربری" placeHolder="نام کاربری را وارد کنید" updater={formUpdater} key='username' errorUpdater={updateErrorArray} />
-                    <FormInput id="email" label="ایمیل" placeHolder="ایمیل را وارد کنید" updater={formUpdater} key='email' errorUpdater={updateErrorArray} />
+                    <FormInput id="username" label="اسم المستخدم" placeHolder="اسم المستخدم را وارد کنید" updater={formUpdater} key='username' errorUpdater={updateErrorArray} />
+                    <FormInput id="email" label="الايميل" placeHolder="الايميل را وارد کنید" updater={formUpdater} key='email' errorUpdater={updateErrorArray} />
                     <FormInput id="password" label="رمز عبور" placeHolder="رمز عبور را وارد کنید" updater={formUpdater} key='password' errorUpdater={updateErrorArray} />
                     <FormInput
                         id="confirmPassword"

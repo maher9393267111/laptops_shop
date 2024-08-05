@@ -39,9 +39,9 @@ export const Input = ({ required = true, title, placeHolder, type = "text", name
         switch (name) {
             case "name": { setFormError(prev => ({ ...prev, errorMessage: "نام باید حداقل سه کاراکتر باشد " })); break }
             case "lName": { setFormError(prev => ({ ...prev, errorMessage: "نام خانوادگی باید حداقل سه کاراکتر باشد " })); break }
-            case "email": { setFormError(prev => ({ ...prev, errorMessage: "ایمیل خود را به درستی وارد کنید" })); break }
+            case "email": { setFormError(prev => ({ ...prev, errorMessage: "الايميل خود را به درستی وارد کنید" })); break }
             case "codePost": { setFormError(prev => ({ ...prev, errorMessage: "کد پستی را به درستی وارد کنید" })); break }
-            case "phoneNum": { setFormError(prev => ({ ...prev, errorMessage: "شماره موبایل  نامعتبر است" })); break }
+            case "phoneNum": { setFormError(prev => ({ ...prev, errorMessage: "رقم الهاتف  نامعتبر است" })); break }
             case "ostan": { setFormError(prev => ({ ...prev, errorMessage: "استان خود را انتخاب کنید" })); break }
             case "province": { setFormError(prev => ({ ...prev, errorMessage: "اسم خیابان را وارد کنید" })); break }
             default: console.error("invalid input name => ", name)

@@ -42,8 +42,8 @@ const TransactionDetails = () => {
 
         dispatch(modalDataUpdater({
             isShown: true,
-            title: 'لغو سفارش',
-            message: 'آیا تصمیم به لغو سفارش خود دارید؟',
+            title: 'الغاء سفارش',
+            message: 'آیا تصمیم به الغاء سفارش خود دارید؟',
             fn: async () => {
                 try {
 
@@ -101,7 +101,7 @@ const TransactionDetails = () => {
 
                                     <div className="flex justify-between">
 
-                                        <p className="font-peyda text-md">وضعیت سفارش:</p>
+                                        <p className="font-peyda text-md">حالة الطلب:</p>
 
                                         <p className={`${transactionData?.status == 'PROCESSING' ? 'text-dark-gold/70' : transactionData?.status == 'DELIVERED' ? 'text-green' : 'text-white-red'}`}>
                                             {
@@ -113,7 +113,7 @@ const TransactionDetails = () => {
                                                         ?
                                                         'درحال ارسال'
                                                         :
-                                                        'لغو شده'
+                                                        'الغاء شده'
                                             }
                                         </p>
                                     </div>
@@ -138,7 +138,7 @@ const TransactionDetails = () => {
                                 <div className="text-[13px] flex flex-col gap-4 text-description-text font-peyda">
 
                                     <div className="font-bold flex justify-between">
-                                        <p>نام و نام خانوادگی: </p>
+                                        <p>الاسم الأول والاسم الأخير: </p>
                                         <p className="font-sans">{transactionData?.customerData?.name + ' ' + transactionData?.customerData?.lName}</p>
                                     </div>
 
@@ -157,13 +157,13 @@ const TransactionDetails = () => {
                                                 </div>
 
                                                 <div className="font-bold flex justify-between">
-                                                    <p>شماره موبایل: </p>
+                                                    <p>رقم الهاتف: </p>
                                                     <p className="font-sans">{transactionData?.customerData.phoneNum}</p>
                                                 </div>
 
                                                 <div className="font-bold flex justify-between">
-                                                    <p>ایمیل: </p>
-                                                    <p className="font-sans">{transactionData?.customerData?.email || 'ایمیل یافت نشد'}</p>
+                                                    <p>الايميل: </p>
+                                                    <p className="font-sans">{transactionData?.customerData?.email || 'الايميل یافت نشد'}</p>
                                                 </div>
 
                                                 <div className="font-bold flex justify-between">
@@ -194,7 +194,7 @@ const TransactionDetails = () => {
                                             <Button
                                                 fn={cancelTransaction}
                                                 Icon={isLoading ? <Loader /> : <></>}
-                                                text={isLoading ? '' : "لغو سفارش"}
+                                                text={isLoading ? '' : "الغاء سفارش"}
                                                 filled
                                             />
                                             : null

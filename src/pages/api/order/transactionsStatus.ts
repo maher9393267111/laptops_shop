@@ -24,7 +24,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         const { rejected, delivered, pending } = result[0];
 
-        return res.status(200).json({ message: 'سفارش شما با موفقیت لغو شد', transactionsData: { rejected, delivered, pending } })
+        return res.status(200).json({ message: 'سفارش شما با موفقیت الغاء شد', transactionsData: { rejected, delivered, pending } })
 
     } catch (err) {
         console.log(err)

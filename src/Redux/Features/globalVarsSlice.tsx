@@ -16,7 +16,7 @@ const globalVarsSlice = createSlice({
             message: '',
             fn: () => { },
             okBtnText: 'تایید',
-            cancelBtnText: 'لغو',
+            cancelBtnText: 'الغاء',
         } satisfies ModalProps,
         loadMore: false,
         activeStatusBox: 0,
@@ -39,7 +39,7 @@ const globalVarsSlice = createSlice({
                     fn: () => { },
                     onCancel: () => { },
                     okBtnText: 'تایید',
-                    cancelBtnText: 'لغو',
+                    cancelBtnText: 'الغاء',
                 }
             }
         },

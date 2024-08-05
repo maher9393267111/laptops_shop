@@ -19,9 +19,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         await WishModel[isWishExist ? 'findOneAndDelete' : 'create']({ productID, creator })
         
         if (isWishExist) {
-            return res.status(200).json({ message: 'محصول از لیست علاقه مندی ها حذف شد' })
+            return res.status(200).json({ message: 'المنتج از لیست علاقه مندی ها حذف شد' })
         } else {
-            return res.status(201).json({ message: 'محصول به لیست علاقه مندی ها اضافه شد' })
+            return res.status(201).json({ message: 'المنتج به لیست علاقه مندی ها اضافه شد' })
         }
 
 

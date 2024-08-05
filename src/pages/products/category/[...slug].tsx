@@ -47,6 +47,7 @@ const Category = ({ product, allProductsCount }: Props) => {
 
         const filterBy = router.query?.slug?.length && router.query.slug[1]
 
+
         const res = await fetch(`/api/products/${!!filterBy ? 'getByFilter' : 'get'}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -132,6 +133,7 @@ const Category = ({ product, allProductsCount }: Props) => {
     );
 }
 
+
 export default memo(Category);
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
@@ -139,6 +141,10 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     const query = context.params
     const category = query?.slug?.length ? query.slug[0] : ''
     const filterBySubCategory = query?.slug?.length ? query.slug[1] : ''
+console.log("QUERYYYYYY" , query  )
+
+
+
 
     try {
 
@@ -158,6 +164,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
                 product = filterProductsWithCategoryAndSubMenu
             } else {
                 const regexPattern = new RegExp(`.*${filterBySubCategory}.*`, 'i');
+                console.log("REGEXTNAME --🔒🔒🔒🔒🔒🔒🔒->" , regexPattern)
                 product = [...product, ...await ProductModel.find({ category, name: { $regex: regexPattern } }).skip(0).limit(12)]
                 allProductsCount = await ProductModel.countDocuments({ category, name: { $regex: regexPattern } })
             }

@@ -19,7 +19,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         const userOrders = await BasketItemModel.find({ userID }, ['-__v', '-userID', '-_id']).populate('productID').lean() // find user basket products
 
-        if (!userOrders.length) return res.status(422).json({ message: 'محصولی برای سفارش وجود نداره😂' })
+        if (!userOrders.length) return res.status(422).json({ message: 'المنتجی برای سفارش وجود نداره😂' })
 
         const checkForDiscount = await ActiveDiscountModel.findOne({ userID, isUsed: false })
 

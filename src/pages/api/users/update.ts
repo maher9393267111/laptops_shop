@@ -16,7 +16,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         if (prop == 'username') {
             const isThisUsernameExist = await UserModel.findOne({ username: value })
-            if (isThisUsernameExist) return res.status(421).json({ message: 'این نام کاربری استفاده شده است' })
+            if (isThisUsernameExist) return res.status(421).json({ message: 'این اسم المستخدم استفاده شده است' })
         }
 
         await UserModel.findOneAndUpdate({ _id }, { [prop]: value })

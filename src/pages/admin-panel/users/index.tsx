@@ -44,7 +44,7 @@ const Users = () => {
         <Layout>
             <div>
 
-                <h3 className='md:text-[26px] text-xl font-peyda font-bold text-panel-darkBlue'>مدریت کاربران</h3>
+                <h3 className='md:text-[26px] text-xl font-peyda font-bold text-panel-darkBlue'>ادارة المستخدمين</h3>
 
                 <div className='grid grid-cols-1 pt-4 overflow-auto'>
 
@@ -52,10 +52,10 @@ const Users = () => {
 
                         <thead>
                             <tr className='font-peyda md:text-[18px] sm:text-[16px] text-[14px] text-center w-full ch:bg-white ch:py-2 ch:text-panel-darkTitle'>
-                                <td>شناسه</td>
-                                <td>نام/نام کاربری</td>
-                                <td>ایمیل</td>
-                                <td>نقش</td>
+                                <td>رمز التعريف</td>
+                                <td>الاسم</td>
+                                <td>الايميل</td>
+                                <td>الدور</td>
                                 <td>بن</td>
                                 <td>حذف</td>
                             </tr>

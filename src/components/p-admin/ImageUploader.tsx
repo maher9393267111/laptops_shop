@@ -30,7 +30,7 @@ const ImageUploader = ({ imageDataSender, trigger, updateLoading }: Props) => {
     const sendImagesData = async () => {
 
         if (!selectedFilesData?.length) {
-            showToast(false, 'حداقل یک عکس برای محصول وارد کنید');
+            showToast(false, 'حداقل یک عکس برای المنتج وارد کنید');
             return 0;
         }
 

@@ -127,7 +127,7 @@ const UserDataUpdater = ({ name, readOnly, title, inputValue, editAble = true, e
                                 onKeyDown={e => e.key == 'Enter' && validateValueAndUpdate()}
                             />
                             <div data-aos-duration="550" data-aos="fade-right" className="flex-1 flex items-center gap-1 ch:flex-1 w-full">
-                                <Button fn={() => { dataEditorCloser(), setValue(inputValue) }} text="لغو" size="sm" />
+                                <Button fn={() => { dataEditorCloser(), setValue(inputValue) }} text="الغاء" size="sm" />
                                 <Button text={loading ? '' : 'تایید'} fn={validateValueAndUpdate} Icon={loading ? <Loader size="sm" /> : <></>} filled size="sm" />
                             </div>
                         </div>

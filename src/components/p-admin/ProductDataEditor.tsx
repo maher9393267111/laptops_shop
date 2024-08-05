@@ -121,7 +121,7 @@ const ProductDataEditor = (
                 message: data.message,
                 status: res.ok,
                 cancelBtnText: false,
-                title: 'تغییر اطلاعات محصول',
+                title: 'تغییر اطلاعات المنتج',
                 fn: () => res.ok && productsUpdater(),
                 onCancel: () => res.ok && productsUpdater(),
             } as ModalProps))
@@ -132,19 +132,19 @@ const ProductDataEditor = (
 
     const checkDataFieldsAndCreate = () => {
 
-        if (!name.trim().length) return showToast(false, 'نام محصول را وارد کنید')
+        if (!name.trim().length) return showToast(false, 'اسم المنتج را وارد کنید')
         if (isNaN(+price!) || !price) return showToast(false, 'قیمتو به درستی وارد کن')
         if (isNaN(+discount!) || +discount! > 100 || +discount! < 0) return showToast(false, 'تخفیف عددی بین ۰ و ۱۰۰ است')
-        if (selectedCategory == -1) return showToast(false, 'دسته بندی محصول را انتخاب کنید')
+        if (selectedCategory == -1) return showToast(false, 'دسته بندی المنتج را انتخاب کنید')
 
         const isProductSpecsValuesEmpty = productsSpecs.some(data => !data.specKey?.trim().length || !String(data.value).trim().length)
-        if (isProductSpecsValuesEmpty) return showToast(false, 'مشخصات محصول را کامل وارد کنید')
+        if (isProductSpecsValuesEmpty) return showToast(false, 'مواصفات المنتج را کامل وارد کنید')
 
         dispatch(modalDataUpdater({
             isShown: true,
             message: 'آیا از تغییرات اعمال شده اطمینان دارید؟',
             status: true,
-            title: 'بروزرسانی اطلاعات محصول',
+            title: 'تحديث معلومات المنتج',
             fn: () => setCreateProductTrigger(true)
         } as ModalProps))
     }
@@ -182,7 +182,7 @@ const ProductDataEditor = (
     return (
         <div ref={scrollToTopDiv} data-aos="zoom-in" className="mt-12 mb-20">
 
-            <h3 className='md:text-[26px] text-xl font-peyda font-bold text-panel-darkBlue'>بروزرسانی اطلاعات محصول</h3>
+            <h3 className='md:text-[26px] text-xl font-peyda font-bold text-panel-darkBlue'>تحديث معلومات المنتج</h3>
 
             <div className='flex items-center xl:flex-row flex-col ch:w-full gap-4 my-4'>
 
@@ -191,7 +191,7 @@ const ProductDataEditor = (
 
                         <div className="flex flex-col gap-2 shadow-sm text-panel-darkTitle font-peyda text-[20px]">
 
-                            <p>نام محصول</p>
+                            <p>اسم المنتج</p>
 
                             <input
                                 value={name}
@@ -205,7 +205,7 @@ const ProductDataEditor = (
                         <div className="grid grid-cols-2 gap-2">
 
                             <div className="flex flex-col gap-2 shadow-sm text-panel-darkTitle font-peyda text-[20px]">
-                                <p>قیمت محصول(تومان)</p>
+                                <p>سعر المنتج</p>
 
                                 <input
                                     value={price}
@@ -217,7 +217,7 @@ const ProductDataEditor = (
                             </div>
 
                             <div className="flex flex-col gap-2 shadow-sm text-panel-darkTitle font-peyda text-[20px]">
-                                <p>تخفیف محصول(درصد)</p>
+                                <p>خصم المنتج (النسبة المئوية)</p>
 
                                 <input
                                     value={discount}
@@ -234,13 +234,13 @@ const ProductDataEditor = (
 
                             <div className={'text-panel-darkTitle py-2 font-peyda'}>
 
-                                <p className={'text-[20px] mb-2'}>دسته بندی اصلی</p>
+                                <p className={'text-[20px] mb-2'}>الفئة الرئيسية</p>
 
                                 <div className={'w-full ch:w-full'}>
 
                                     <select onChange={e => setSelectedCategory(e.target.value)} value={selectedCategory} className={'bg-panel-white p-4 rounded-xl'}>
 
-                                        <option value={-1}>دسته بندی محصول را مشخص کنید</option>
+                                        <option value={-1}>دسته بندی المنتج را مشخص کنید</option>
 
                                         {
                                             Object.keys(categoriesDate).map(data => <option key={data} value={data}>{engCategoryToPersian(data as categories)}</option>)
@@ -255,7 +255,7 @@ const ProductDataEditor = (
                                 availableSubCategories?.length
                                     ?
                                     <div data-aos={'fade-in'} className={'text-panel-darkTitle py-2 font-peyda'}>
-                                        <p className={'text-[20px] mb-2'}>زیرمجموعه</p>
+                                        <p className={'text-[20px] mb-2'}>الفئة الفرعية</p>
                                         <div className={'w-full ch:w-full'}>
                                             <select value={subCategory} onChange={e => setSubCategory(e.target.value)} className={'bg-panel-white p-4 rounded-xl'}>
                                                 {
@@ -272,7 +272,7 @@ const ProductDataEditor = (
 
                         <div className="flex flex-col gap-2 text-panel-darkTitle font-peyda text-[20px]">
 
-                            <p>مشخصات محصول</p>
+                            <p>مواصفات المنتج</p>
 
                             <ProductSpec
                                 id={1}
@@ -333,11 +333,11 @@ const ProductDataEditor = (
                                         ?
                                         <Loader />
                                         :
-                                        ' بروزرسانی اطلاعات محصول'
+                                        ' تحديث معلومات المنتج'
                                 }
                             </button>
 
-                            <button name='cancel operation' onClick={closeUpdateForm} className='p-3 text-center font-peyda text-[18px] px-5 flex-center bg-panel-darkRed text-white rounded-xl'>لغو</button>
+                            <button name='cancel operation' onClick={closeUpdateForm} className='p-3 text-center font-peyda text-[18px] px-5 flex-center bg-panel-darkRed text-white rounded-xl'>الغاء</button>
                         </div>
                     </div>
                 </div>
@@ -351,11 +351,11 @@ const ProductDataEditor = (
                                 ?
                                 <Loader />
                                 :
-                                ' بروزرسانی اطلاعات محصول'
+                                ' تحديث معلومات المنتج'
                         }
                     </button>
 
-                    <button name='cancel operation' onClick={closeUpdateForm} className='p-3 text-center font-peyda text-[18px] px-5 flex-center bg-panel-darkRed text-white rounded-xl'>لغو</button>
+                    <button name='cancel operation' onClick={closeUpdateForm} className='p-3 text-center font-peyda text-[18px] px-5 flex-center bg-panel-darkRed text-white rounded-xl'>الغاء</button>
                 </div>
 
             </div>

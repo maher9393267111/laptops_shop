@@ -149,13 +149,13 @@ const isEmptyInput = (payload: {}, props: string[]) => {
 const inputValidations = (title: string, value: string, confirmPassword?: string): inputValidationProps | undefined => {
 
     const inputRules = [
-        { title: 'username', isValid: value.length > 3 && value.length < 20, errorMessage: 'طول نام کاربری باید بیشتر از ۳ و کمتر از ۲۰ کاراکتر باشد' },
-        { title: 'email', isValid: /^[\w-]+@[a-zA-Z\d-]+\.[a-zA-Z]{2,}$/.test(value), errorMessage: 'ایمیل نامعتبر است' },
+        { title: 'username', isValid: value.length > 3 && value.length < 20, errorMessage: 'طول اسم المستخدم باید بیشتر از ۳ و کمتر از ۲۰ کاراکتر باشد' },
+        { title: 'email', isValid: /^[\w-]+@[a-zA-Z\d-]+\.[a-zA-Z]{2,}$/.test(value), errorMessage: 'الايميل نامعتبر است' },
         { title: 'password', isValid: value.length < 20 && value.length > 7, errorMessage: 'طول رمز عبور باید بیشتر از ۷ و کمتر از ۲۰ کاراکتر باشد' },
         { title: 'confirmPassword', isValid: Boolean(value === confirmPassword), errorMessage: 'رمز تایید با رمز وارد شده تناقض دارد' },
-        { title: 'nationalCode', isValid: value.length == 10 && !isNaN(+value), errorMessage: 'کد ملی یک عدد ده رقمی است' },
-        { title: 'phoneNumber', isValid: /^09\d{9}$/.test(value), errorMessage: 'شماره موبایل نامعتبر است' },
-        { title: 'nameLastName', isValid: value.length > 6, errorMessage: 'نام و نام خانوادگی کوتاه است' },
+        { title: 'nationalCode', isValid: value.length == 10 && !isNaN(+value), errorMessage: 'الرمز الدولي یک عدد ده رقمی است' },
+        { title: 'phoneNumber', isValid: /^09\d{9}$/.test(value), errorMessage: 'رقم الهاتف نامعتبر است' },
+        { title: 'nameLastName', isValid: value.length > 6, errorMessage: 'الاسم الأول والاسم الأخير کوتاه است' },
         { title: 'changePass', isValid: value.length < 20 && value.length > 7, errorMessage: 'طول رمز عبور باید بیشتر از ۷ و کمتر از ۲۰ کاراکتر باشد' },
     ]
 
@@ -177,20 +177,20 @@ const engCategoryToPersian = (category: categories) => {
     let translatedCategory = null
 
     switch (category) {
-        case 'accessory': { translatedCategory = 'لوازم جانبی'; break }
-        case 'console': { translatedCategory = 'کنسول بازی'; break }
-        case 'laptop': { translatedCategory = 'لپتاپ'; break }
-        case 'parts': { translatedCategory = 'قطعات کامپیوتر'; break }
-        case 'pc': { translatedCategory = 'کامپیوتر'; break }
+        case 'accessory': { translatedCategory = 'اكسسوارات'; break }
+        case 'console': { translatedCategory = 'الالعاب'; break }
+        case 'laptop': { translatedCategory = 'لابتوب'; break }
+        case 'parts': { translatedCategory = 'قطع الكمبيوتر'; break }
+        case 'pc': { translatedCategory = 'كمبيوتر'; break }
     }
 
     if (!translatedCategory) {
         switch (category) {
-            case 'لوازم جانبی': { translatedCategory = 'accessory'; break }
-            case 'کنسول بازی': { translatedCategory = 'console'; break }
-            case 'لپتاپ': { translatedCategory = 'laptop'; break }
-            case 'قطعات کامپیوتر': { translatedCategory = 'parts'; break }
-            case 'کامپیوتر': { translatedCategory = 'pc'; break }
+            case 'اكسسوارات': { translatedCategory = 'accessory'; break }
+            case 'الالعاب': { translatedCategory = 'console'; break }
+            case 'لابتوب': { translatedCategory = 'laptop'; break }
+            case 'قطع الكمبيوتر': { translatedCategory = 'parts'; break }
+            case 'كمبيوتر': { translatedCategory = 'pc'; break }
         }
     }
 
@@ -202,29 +202,29 @@ const engSubCategoryToPersian = (category: string) => {
     let translatedSubCategory = null
 
     switch (category) {
-        case 'mouse': { translatedSubCategory = 'موس'; break }
-        case 'motherboard': { translatedSubCategory = 'مادربرد'; break }
-        case 'keyboard': { translatedSubCategory = 'کیبرد'; break }
-        case 'headphone': { translatedSubCategory = 'هدفون'; break }
-        case 'webcam': { translatedSubCategory = 'وبکم'; break }
-        case 'cpu': { translatedSubCategory = 'سیپییو'; break }
-        case 'gpu': { translatedSubCategory = 'کارت گرافیک'; break }
-        case 'ram': { translatedSubCategory = 'رم'; break }
-        case 'cooler': { translatedSubCategory = 'خنک کننده'; break }
-        case 'ssd': { translatedSubCategory = 'حافظه SSD'; break }
+        case 'mouse': { translatedSubCategory = 'ماوس'; break }
+        case 'motherboard': { translatedSubCategory = 'ماذربورد'; break }
+        case 'keyboard': { translatedSubCategory = 'كيبورد'; break }
+        case 'headphone': { translatedSubCategory = 'سماعات اذن'; break }
+        case 'webcam': { translatedSubCategory = 'كاميرات'; break }
+        case 'cpu': { translatedSubCategory = 'وحدة معالجة مركزية'; break }
+        case 'gpu': { translatedSubCategory = 'كروت شاشة' ; break }
+        case 'ram': { translatedSubCategory = 'رام'; break }
+        case 'cooler': { translatedSubCategory = 'وحدة تبريد'; break }
+        case 'ssd': { translatedSubCategory = 'كروت ذاكرة'; break }
     }
 
     if (!translatedSubCategory) {
         switch (category) {
-            case 'موس': { translatedSubCategory = 'mouse'; break; }
-            case 'مادربرد': { translatedSubCategory = 'motherboard'; break; }
-            case 'کیبرد': { translatedSubCategory = 'keyboard'; break; }
-            case 'هدفون': { translatedSubCategory = 'headphone'; break; }
-            case 'وبکم': { translatedSubCategory = 'webcam'; break; }
-            case 'سیپییو': { translatedSubCategory = 'cpu'; break; }
-            case 'کارت گرافیک': { translatedSubCategory = 'gpu'; break; }
-            case 'رم': { translatedSubCategory = 'ram'; break; }
-            case 'خنک کننده': { translatedSubCategory = 'cooler'; break; }
+            case 'ماوس': { translatedSubCategory = 'mouse'; break; }
+            case 'ماذاربورد': { translatedSubCategory = 'motherboard'; break; }
+            case 'كيبورد': { translatedSubCategory = 'keyboard'; break; }
+            case 'سماعات اذن': { translatedSubCategory = 'headphone'; break; }
+            case 'كاميرات': { translatedSubCategory = 'webcam'; break; }
+            case 'وحدة معالجة مركزية': { translatedSubCategory = 'cpu'; break; }
+            case 'كروت شاشة': { translatedSubCategory = 'gpu'; break; }
+            case 'رام': { translatedSubCategory = 'ram'; break; }
+            case 'وحدة تبريد': { translatedSubCategory = 'cooler'; break; }
             case 'حافظه SSD': { translatedSubCategory = 'ssd'; break; }
         }
     }
@@ -395,7 +395,7 @@ const roundedPrice = (price: number): string => {
 }
 
 const getCurrentPersianWeekday = (day: number) => {
-    const persianDays = ['یکشنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنج‌شنبه', 'جمعه', 'شنبه'];
+    const persianDays = ['الاحد', 'الاثنين', 'الثلاثاء', 'الاربعاء', 'الخميس', 'الجمعة', 'السبت'];
     return persianDays[day];
 }
 

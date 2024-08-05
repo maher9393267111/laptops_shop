@@ -18,7 +18,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         await ProductModel.findOneAndUpdate({ _id: data?._id }, { ...data })
 
-        return res.status(201).json({ message: 'محصول با موفقیت بروزرسانی شد' })
+        return res.status(201).json({ message: 'المنتج با موفقیت بروزرسانی شد' })
 
     } catch (err) {
         console.log(err)

@@ -86,7 +86,7 @@ const AdminData = ({ nameLastName, _id, email, creator, username, profile }: use
                             name='cancel message'
                             onClick={() => setIsSending(false)}
                             className={`mr-auto max-w-28 w-full h-full bg-panel-darkRed transition-all px-4 rounded-md text-white`}>
-                            لغو
+                            الغاء
                         </button>
 
                     </div>

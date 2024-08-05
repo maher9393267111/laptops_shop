@@ -77,7 +77,7 @@ const Checkout = () => {
 
     const submitOrder = async () => {
 
-        if (!relatedData?.BasketItem?.length) return showToast(false, 'محصولی برای خرید وجود نداره')
+        if (!relatedData?.BasketItem?.length) return showToast(false, 'المنتجی برای خرید وجود نداره')
 
         if (isLoading) return
 
@@ -90,7 +90,7 @@ const Checkout = () => {
         if (formData.name.trim().length > 20 || formData.name.trim().length < 3) return showToast(false, 'نام باید بیشتر از 3 و کمتر از 20 کاراکتر باشد')
         if (formData.lName.trim().length > 20 || formData.lName.trim().length < 3) return showToast(false, 'نام خانوادگی باید بیشتر از 3 و کمتر از 20 کاراکتر باشد')
         if (isNaN(+formData.codePost) || formData.codePost.trim().length != 10) return showToast(false, 'کد پستی یک عدد ده رقمی است')
-        if (!/^09\d{9}$/.test(formData.phoneNum)) return showToast(false, 'شماره موبایل معتبر نیست')
+        if (!/^09\d{9}$/.test(formData.phoneNum)) return showToast(false, 'رقم الهاتف معتبر نیست')
         if (!doesUserAccept) return showToast(false, 'موافقت با قوانین و مقررات الزامی است')
 
         setIsLoading(true)
@@ -110,7 +110,7 @@ const Checkout = () => {
                 message: resData.message,
                 status: res.ok,
                 title: res.ok ? 'خرید موفق' : 'خرید ناموفق',
-                cancelBtnText: res.ok ? false : 'لغو',
+                cancelBtnText: res.ok ? false : 'الغاء',
                 okBtnText: res.ok ? 'باشه' : res.status == 421 ? 'حذف کد تخفیف و تلاش مجدد' : 'تلاش مجدد',
                 fn: async () => {
                     if (!res.ok) {
@@ -156,7 +156,7 @@ const Checkout = () => {
                                 </Input>
                                 <Input fn={inputUpdater} name="province" title="خیابان" />
                                 <Input fn={inputUpdater} name="codePost" title="کد پستی (ده رقمی)" />
-                                <Input fn={inputUpdater} name="phoneNum" title="شماره موبایل" type="number" placeHolder="09123456789" />
+                                <Input fn={inputUpdater} name="phoneNum" title="رقم الهاتف" type="number" placeHolder="09123456789" />
                                 <Input fn={inputUpdater} name="email" title="پست الکترونیک (اختیاری)" required={false} type="email" placeHolder={"gmail.com@"} />
                             </div>
 
@@ -180,7 +180,7 @@ const Checkout = () => {
 
                                 <thead className="bg-primary-black text-[12px]">
                                     <tr>
-                                        <td className={`p-3`}>محصول</td>
+                                        <td className={`p-3`}>المنتج</td>
                                         <td>قیمت</td>
                                     </tr>
                                 </thead>
@@ -212,7 +212,7 @@ const Checkout = () => {
 
                             </table>
 
-                            <p className="border leading-[32px] text-description-text rounded-md border-gold/25 p-3">مشتری عزیز، محصولاتی که بالای 100 میلیون تومان هستند با درگاه پرداخت نمی توان آن ها را پرداخت کرد، لطفا برای گرفتن شماره حساب و یا راهنمایی بیشتر با شماره های 90909090909 ، 0909090909 تماس بگیرید.</p>
+                            <p className="border leading-[32px] text-description-text rounded-md border-gold/25 p-3">مشتری عزیز، المنتجاتی که بالای 100 میلیون تومان هستند با درگاه پرداخت نمی توان آن ها را پرداخت کرد، لطفا برای گرفتن رمز التعريف حساب و یا راهنمایی بیشتر با رمز التعريف های 90909090909 ، 0909090909 تماس بگیرید.</p>
 
                             <div className="text-description-text rounded-md p-3">
                                 <div className="flex items-center gap-2">

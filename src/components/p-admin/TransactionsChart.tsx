@@ -20,7 +20,7 @@ const TransactionsChart = ({ chartData }: { chartData: TransactionProps[] }) => 
 
         const chartItemIndex = updatedChartData.findIndex(chartData => chartData.name === weekday);
 
-        // we don't want to show any data from last week دوشنبه if we are in شنبه right now
+        // we don't want to show any data from last week الاثنين if we are in السبت right now
         if (chartItemIndex !== -1 && (currentDay >= transactionWeekDay || transactionWeekDay == 6)) {
             updatedChartData[chartItemIndex] = {
                 ...updatedChartData[chartItemIndex],
@@ -38,11 +38,11 @@ const TransactionsChart = ({ chartData }: { chartData: TransactionProps[] }) => 
 
             <div className='flex items-center justify-between'>
                 <div>
-                    <h4 className='font-bold text-2xl text-panel-darkTitle font-peyda'>نمودار تراکنش ها</h4>
-                    <p className='font-sans text-[12px] text-panel-caption flex items-center justify-start'>نمودار تعداد تراکنش ها در روز های مختلف هفته</p>
+                    <h4 className='font-bold text-2xl text-panel-darkTitle font-peyda'>مخطط المعاملات</h4>
+                    <p className='font-sans text-[12px] text-panel-caption flex items-center justify-start'>رسم بياني لعدد المعاملات في أيام مختلفة من الأسبوع</p>
                 </div>
                 <button className='border border-panel-darkBlue font-bold transition-all duration-300 hover:bg-panel-darkBlue hover:text-white flex items-center gap-2 font-peyda rounded-md text-panel-darkBlue text-sm text-center p-3'>
-                    <Link href={`data:text/json;charset=utf-8,${chartDataUrl}`} download={'This week transactions hah'}>دانلود تراکنش ها</Link>
+                    <Link href={`data:text/json;charset=utf-8,${chartDataUrl}`} download={'This week transactions hah'}>دانلود المعاملات</Link>
                     <MdOutlineFileDownload className='size-[22px]' />
                 </button>
             </div>

@@ -45,7 +45,7 @@ const Comments = () => {
             <Layout>
                 <div>
 
-                    <h3 className='md:text-[26px] text-xl font-peyda pt-4 font-bold text-panel-darkBlue'>مدریت کامنت ها</h3>
+                    <h3 className='md:text-[26px] text-xl font-peyda pt-4 font-bold text-panel-darkBlue'>ادارة التعليقات</h3>
 
                     <div className='grid grid-cols-1 pt-4 overflow-auto'>
 
@@ -53,14 +53,14 @@ const Comments = () => {
 
                             <thead>
                                 <tr className='font-peyda md:text-[18px] sm:text-[16px] text-[14px] text-center w-full ch:bg-white ch:py-2 ch:text-panel-darkTitle'>
-                                    <td>شماره</td>
+                                    <td>رمز التعريف</td>
                                     <td>اسم</td>
-                                    <td>ایمیل</td>
-                                    <td>امتیاز</td>
-                                    <td>محصول</td>
-                                    <td>تاریخ ثبت</td>
+                                    <td>الايميل</td>
+                                    <td>نتيجة</td>
+                                    <td>المنتج</td>
+                                    <td>تاریخ التسجيل</td>
                                     <td className='w-20 whitespace-nowrap'>مشاهده</td>
-                                    <td className='w-20 whitespace-nowrap'>تایید/رد</td>
+                                    <td className='w-20 whitespace-nowrap'>تأكيد/رفض</td>
                                 </tr>
                             </thead>
 

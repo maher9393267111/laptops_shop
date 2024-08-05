@@ -20,7 +20,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         await ProductModel.findOneAndDelete({ _id })
 
-        return res.json({ message: 'محصول با موفقیت خذف شد' })
+        return res.json({ message: 'المنتج با موفقیت خذف شد' })
 
     } catch (err) {
         console.log(err)

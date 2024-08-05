@@ -23,8 +23,8 @@ const TransactionData = ({ _id, createdAt, customerData, totalPrice, status, row
 
         dispatch(modalDataUpdater({
             isShown: true,
-            message: `آیا از تغییر وضعیت سفارش به ${value == 'DELIVERED' ? "'ارسال شده'" : value == 'CANCELED' ? "'لغو شده '" : "'درحال ارسال '"} اطمینان دارید؟`,
-            title: 'تغییر وضعیت سفارش',
+            message: `آیا از تغییر حالة الطلب به ${value == 'DELIVERED' ? "'ارسال شده'" : value == 'CANCELED' ? "'الغاء شده '" : "'درحال ارسال '"} اطمینان دارید؟`,
+            title: 'تغییر حالة الطلب',
             status: true,
             fn: async () => {
                 try {
@@ -71,7 +71,7 @@ const TransactionData = ({ _id, createdAt, customerData, totalPrice, status, row
                         onClick={activeStatusBoxUpdater}
                         className={`${status == 'CANCELED' ? 'bg-panel-darkRed' : status == 'DELIVERED' ? 'bg-panel-darkGreen' : 'bg-panel-darkBlue'}  text-white rounded-lg flex justify-between  p-2.5 text-center items-center whitespace-nowrap text-[12px] w-full`}
                         name='update active status box'
-                    > {status == 'CANCELED' ? 'لغو شده' : status == 'DELIVERED' ? 'ارسال شده' : 'درحال ارسال'}
+                    > {status == 'CANCELED' ? 'الغاء شده' : status == 'DELIVERED' ? 'ارسال شده' : 'درحال ارسال'}
                         <MdKeyboardArrowDown className={`size-5 ${activeStatusBox == (_id as any) && 'rotate-180'} transition-all`} />
                     </button>
 
@@ -87,7 +87,7 @@ const TransactionData = ({ _id, createdAt, customerData, totalPrice, status, row
                                         statusValue == 'PROCESSING'
                                             ? 'درحال ارسال'
                                             :
-                                            statusValue == 'CANCELED' ? 'لغو شده'
+                                            statusValue == 'CANCELED' ? 'الغاء شده'
                                                 : 'ارسال شده'
                                     }</div>
                                 )

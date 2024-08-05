@@ -130,7 +130,7 @@ const SideMenu = ({ dataToShow, changeTypeFn }: SideMenuProps) => {
                                             :
                                             <div className='flex flex-col justify-center text-[13px] bg-secondary-black rounded-md text-title-text p-3 my-4 items-center gap-3'>
                                                 <BiBasket className='size-8 text-description-text' />
-                                                <p>هیچ محصولی در سبد خرید نیست</p>
+                                                <p>هیچ المنتجی در سبد خرید نیست</p>
                                             </div>
                                     }
                                 </div>
@@ -141,7 +141,7 @@ const SideMenu = ({ dataToShow, changeTypeFn }: SideMenuProps) => {
                                         <p><span className='text-white-red text-[16px] font-bold'>{sumOfProductsPrice.toLocaleString('fa-IR')}</span> تومان</p>
                                     </div>
                                     <div className='flex items-center justify-between ch:grow gap-2'>
-                                        <Button fn={() => relatedData?.BasketItem?.length ? navigate.push('/checkout') : showToast(false, 'محصولی برای تسویه وجود نداره ها')} filled text='تسویه حساب' />
+                                        <Button fn={() => relatedData?.BasketItem?.length ? navigate.push('/checkout') : showToast(false, 'المنتجی برای تسویه وجود نداره ها')} filled text='تسویه حساب' />
                                         <Button fn={() => navigate.push('/cart')} filled text='مشاهده سبد خرید' />
                                     </div>
                                 </div>
@@ -168,7 +168,7 @@ const SideMenu = ({ dataToShow, changeTypeFn }: SideMenuProps) => {
                             </div>
 
                             <div className="flex items-center bg-secondary-black text-white gap-2 ch:ml-auto pt-2 mx-3 p-2 border-b border-red-800 overflow-hidden rounded-md">
-                                <input ref={searchTextRef} onKeyDown={e => e.key == 'Enter' && globalSearch()} className=" bg-transparent w-full text-sm " type="text" placeholder="محصول خود را بیابید..." />
+                                <input ref={searchTextRef} onKeyDown={e => e.key == 'Enter' && globalSearch()} className=" bg-transparent w-full text-sm " type="text" placeholder="المنتج خود را بیابید..." />
                                 <IoSearch onClick={globalSearch} className='size-7 cursor-pointer' />
                             </div>
 
@@ -181,57 +181,57 @@ const SideMenu = ({ dataToShow, changeTypeFn }: SideMenuProps) => {
                                         title="کامپیوتر" screen="small"
                                         Icon={<FaComputer className="size-5" />}
                                         submenus={[
-                                            { title: 'کامپیوتر گیمینگ', path: '/products/category/pc?filter=gaming' },
-                                            { title: 'کامپیوتر اقتصادی', path: '/products/category/pc?filter=affordable' },
-                                            { title: 'کامپیوتر دانشجویی', path: '/products/category/pc?filter=student' },
+                                            { title: 'كمبيوترات العاب', path: '/products/category/pc?filter=gaming' },
+                                            { title: 'كمبيوترات  اقتصادية', path: '/products/category/pc?filter=affordable' },
+                                            { title: 'كمبيوترات طلاب', path: '/products/category/pc?filter=student' },
                                             { title: 'کامپیوتر رندرینک', path: '/products/category/pc?filter=rendering' },
-                                            { title: 'سیستم اداری', path: '/products/category/pc?filter=office' },
+                                            { title: 'كمبيوترات مكتبية', path: '/products/category/pc?filter=office' },
                                             { title: 'همه کامپیوتر ها', path: '/products/category/pc ' },
                                         ]}
                                     />
                                     <Category
-                                        key={'لپتاپ'}
-                                        title="لپتاپ" screen="small"
+                                        key={'لابتوب'}
+                                        title="لابتوب" screen="small"
                                         Icon={<IoIosLaptop className="size-6" />}
                                         submenus={[
-                                            { title: 'لپتاپ Lonovo ', path: '/products/category/laptop/lenovo' },
-                                            { title: 'لپتاپ Asus ', path: '/products/category/laptop/asus' },
-                                            { title: 'لپتاپ Msi ', path: '/products/category/laptop/msi' },
-                                            { title: 'لپتاپ Hp ', path: '/products/category/laptop/hp' },
-                                            { title: 'لپتاپ Acer ', path: '/products/category/laptop/acer' },
-                                            { title: 'همه لپتاپ ها', path: '/products/category/laptop' },
+                                            { title: 'لابتوبLonovo ', path: '/products/category/laptop/lenovo' },
+                                            { title: 'لابتوبAsus ', path: '/products/category/laptop/asus' },
+                                            { title: 'لابتوبMsi ', path: '/products/category/laptop/msi' },
+                                            { title: 'لابتوبHp ', path: '/products/category/laptop/hp' },
+                                            { title: 'لابتوبAcer ', path: '/products/category/laptop/acer' },
+                                            { title: 'همه لابتوبها', path: '/products/category/laptop' },
                                         ]}
                                     />
                                     <Category
                                         key={'قطعات'}
-                                        title="قطعات کامپیوتر" screen="small"
+                                        title="اكسسوارات" screen="small"
                                         Icon={<HiOutlineCpuChip className="size-6" />}
                                         submenus={[
-                                            { title: 'مادربرد', path: '/products/category/parts/motherboard' },
-                                            { title: 'سیپیو', path: '/products/category/parts/cpu' },
-                                            { title: 'کارت گرافیک', path: '/products/category/parts/gpu' },
+                                            { title: 'ماذاربورد', path: '/products/category/parts/motherboard' },
+                                            { title: 'وحدة المعالجة المركزية', path: '/products/category/parts/cpu' },
+                                            { title: 'كرت شاشة', path: '/products/category/parts/gpu' },
                                             { title: 'رم', path: '/products/category/parts/ram' },
                                             { title: 'هارد', path: '/products/category/parts/hard' },
-                                            { title: 'خنک کننده', path: '/products/category/parts/cooler' },
+                                            { title: 'وحدة تبريد', path: '/products/category/parts/cooler' },
                                             { title: 'حافظه SSD', path: '/products/category/parts/ssd' },
                                             { title: 'همه قطعات', path: '/products/category/parts' },
                                         ]}
                                     />
                                     <Category
                                         key={'لوازم'}
-                                        title="لوازم جانبی" screen="small"
+                                        title="قطع كمبيوتر" screen="small"
                                         Icon={<PiHeadphones className="size-6" />}
                                         submenus={[
-                                            { title: 'موس', path: '/products/category/accessory/mouse' },
-                                            { title: 'کیبرد', path: '/products/category/accessory/keyboard' },
-                                            { title: 'هدفون', path: '/products/category/accessory/headphone' },
-                                            { title: 'وبکم', path: '/products/category/accessory/webcam' },
-                                            { title: 'همه لوازم جانبی', path: '/products/category/accessory' },
+                                            { title: 'ماوس', path: '/products/category/accessory/mouse' },
+                                            { title: 'كيبورد', path: '/products/category/accessory/keyboard' },
+                                            { title: 'سماعات اذن', path: '/products/category/accessory/headphone' },
+                                            { title: 'كاميرات', path: '/products/category/accessory/webcam' },
+                                            { title: 'همه قطع كمبيوتر', path: '/products/category/accessory' },
                                         ]}
                                     />
                                     <Category
                                         key={'کنسول'}
-                                        title="کنسول بازی" screen="small"
+                                        title="الالعاب" screen="small"
                                         Icon={<GiConsoleController className="size-6" />}
                                         submenus={[
                                             { title: 'کنسول ps5', path: '/products/category/console/ps5' },
@@ -247,10 +247,10 @@ const SideMenu = ({ dataToShow, changeTypeFn }: SideMenuProps) => {
                             <div className="flex items-center px-5 mt-6 gap-1">
                                 <MdOutlinePhoneAndroid className="size-7 text-blue-dark" />
                                 <div className='text-sm text-white flex items-center gap-4'>
-                                    تماس با ما :
+                                    اتصل بنا :
                                     <div className="text-left" >
-                                        <div>۰۲۱۹۸۷۶۵</div>
-                                        <div className="text-blue-dark" >۰۳۱۴۴۵۵۶۶۷۷</div>
+                                        <div>1234567</div>
+                                        <div className="text-blue-dark" >123456</div>
                                     </div>
                                 </div>
                             </div>

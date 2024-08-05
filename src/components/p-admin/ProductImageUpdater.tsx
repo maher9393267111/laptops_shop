@@ -37,7 +37,7 @@ const ProductImageUpdater = ({ imageDataSender, imagesData, trigger, updateLoadi
     const sendImagesData = async () => {
 
         if (!selectedFilesData?.length) {
-            showToast(false, 'حداقل یک عکس برای محصول وارد کنید');
+            showToast(false, 'حداقل یک عکس برای المنتج وارد کنید');
             return 0;
         }
 
@@ -137,7 +137,7 @@ const ProductImageUpdater = ({ imageDataSender, imagesData, trigger, updateLoadi
     return (
         <div className={'flex-1 rounded-xl p-4 h-full mb-auto bg-white shadow-sm'}>
 
-            <div className={'font-peyda text-[25px] pb-3'}>عکس های محصول</div>
+            <div className={'font-peyda text-[25px] pb-3'}>صور المنتج</div>
 
             <div className={'xl:flex block gap-3 flex-col'}>
 

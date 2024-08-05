@@ -33,7 +33,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         const duplicatedInputs = Object.keys(err.errorResponse?.keyPattern).join('')
 
         if (duplicatedInputs) {
-            const duplicatedProp = duplicatedInputs == 'email' ? 'ایمیل' : 'نام کاربری'
+            const duplicatedProp = duplicatedInputs == 'email' ? 'الايميل' : 'اسم المستخدم'
             return res.status(421).json({ message: ` حسابی با این ${duplicatedProp} وجود دارد ` })
         }
 

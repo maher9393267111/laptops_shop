@@ -34,7 +34,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         await BasketItemModel.findOneAndDelete({ productID, userID })
 
-        return res.status(201).json({ message: 'محصول از سبد خرید حذف شد' })
+        return res.status(201).json({ message: 'المنتج از سبد خرید حذف شد' })
 
     } catch (err) {
         console.log(err)

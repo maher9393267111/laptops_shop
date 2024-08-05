@@ -50,7 +50,7 @@ const Index = () => {
             <Layout>
                 <div>
 
-                    <h3 className='md:text-[26px] text-xl font-peyda font-bold text-panel-darkBlue'>مدریت سفارش ها</h3>
+                    <h3 className='md:text-[26px] text-xl font-peyda font-bold text-panel-darkBlue'>ادارة الالطلبات</h3>
 
                     <div className='grid grid-cols-1 mdLmt-7 mt-4 overflow-auto'>
 
@@ -58,12 +58,12 @@ const Index = () => {
 
                             <thead>
                                 <tr className='font-peyda sm:text-[14px] text-[13px] text-center w-full ch:bg-white ch:py-2 ch:text-panel-darkTitle'>
-                                    <td>شماره</td>
-                                    <td>نام/نام کاربری</td>
-                                    <td>ایمیل</td>
+                                    <td>رمز التعريف</td>
+                                    <td>الاسم</td>
+                                    <td>الايميل</td>
                                     <td>تاریخ</td>
                                     <td>فروش</td>
-                                    <td className='whitespace-nowrap w-20 relative'>وضعیت سفارش</td>
+                                    <td className='whitespace-nowrap w-20 relative'>حالة الطلب</td>
                                 </tr>
                             </thead>
 

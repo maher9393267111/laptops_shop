@@ -77,7 +77,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
     }
 
     const breadCrumbData = [
-        { text: "لپتاپ", link: "/products/category/laptop" },
+        { text: "لابتوب", link: "/products/category/laptop" },
         { text: name },
     ]
 
@@ -338,7 +338,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
 
                         </div>
 
-                        <div className="bg-green flex-1 rounded-md p-4 text-sm text-center">قدرت ما در بهترین قیمت بازار است بهترین عرضه کننده لپ تاپ در ایران</div>
+                        <div className="bg-green flex-1 rounded-md p-4 text-sm text-center">قدرت ما در أفضل سعر بازار است بهترین عرضه کننده لپ تاپ در ایران</div>
 
                     </div>
 
@@ -346,7 +346,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
 
                         <p>{name}</p>
 
-                        <span className="bg-blue-dark flex gap-1 max-w-[140px] text-[11px] p-1 rounded-sm my-3">شناسه محصول :<div className="text-[13px]">{String(_id).slice(-7, -1)}</div></span>
+                        <span className="bg-blue-dark flex gap-1 max-w-[140px] text-[11px] p-1 rounded-sm my-3">رمز التعريف المنتج :<div className="text-[13px]">{String(_id).slice(-7, -1)}</div></span>
 
                         <div className="flex items-center gap-12 text-[12px]">
 
@@ -375,8 +375,8 @@ const Product = ({ product }: { product: productDataTypes }) => {
 
                                 <div className="flex items-center gap-1">
                                     <input
-                                        checked={Object.keys(productServices)?.some(key => key == 'بیمه محصول')}
-                                        onChange={e => productServicesUpdater(e.target.checked, 'بیمه محصول', 1500000)}
+                                        checked={Object.keys(productServices)?.some(key => key == 'بیمه المنتج')}
+                                        onChange={e => productServicesUpdater(e.target.checked, 'بیمه المنتج', 1500000)}
                                         name="insurance"
                                         type="checkbox"
                                         className={`${isUpdating && 'cursor-wait'}`}
@@ -478,7 +478,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
 
                     <div className=" flex-1 text-[12px] hidden lg:block text-white mb-auto">
                         <div className="ch:rounded-sm space-y-1">
-                            <h4 className="bg-[#343539] mb-2 py-1 px-2">مشخصات اصلی محصول</h4>
+                            <h4 className="bg-[#343539] mb-2 py-1 px-2">مشخصات اصلی المنتج</h4>
                             {
                                 [...productSpecs]
                                     .slice(0, 6)
@@ -550,7 +550,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                             صفحه‌کلید بپرهیزید.
                                             <br /><br />
                                             نظرات خود را براساس تجربه و استفاده‌ی عملی و با دقت به نکات فنی ارسال کنید؛
-                                            بدون تعصب به محصول خاص، مزایا و معایب را بازگو کنید و بهتر است از ارسال
+                                            بدون تعصب به المنتج خاص، مزایا و معایب را بازگو کنید و بهتر است از ارسال
                                             نظرات چندکلمه‌‌ای خودداری کنید.
                                             <br /><br />
                                             بهتر است در نظرات خود از تمرکز روی عناصر متغیر مثل قیمت، پرهیز کنید.
@@ -577,7 +577,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                                         <label htmlFor="textArea">دیدگاه شما <span className="text-white-red">*</span></label>
 
                                                         <div className="flex items-center gap-1 justify-evenly">
-                                                            <div>امتیاز شما:</div>
+                                                            <div>نتيجة شما:</div>
                                                             <div className="flex items-center gap-1 ch:size-5">{userRates}</div>
                                                         </div>
                                                     </div>
@@ -609,7 +609,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                         <div className="flex items-center text-[11px] gap-4 text-description-text ch:transition-all">
                                             <BsFilterLeft className="size-5" />
                                             <p onClick={() => setSortCommentsBy('newest')} className={`${sortCommentsBy == 'newest' && 'text-white-red'} cursor-pointer`}>جدیدترین</p>
-                                            <p onClick={() => setSortCommentsBy('rate')} className={`${sortCommentsBy == 'rate' && 'text-white-red'} cursor-pointer`}>براساس امتیاز</p>
+                                            <p onClick={() => setSortCommentsBy('rate')} className={`${sortCommentsBy == 'rate' && 'text-white-red'} cursor-pointer`}>براساس نتيجة</p>
                                             <p onClick={() => setSortCommentsBy('byCustomer')} className={`${sortCommentsBy == 'byCustomer' && 'text-white-red'} cursor-pointer`}>دیدگاه خریداران</p>
                                         </div>
                                     </div>
@@ -623,7 +623,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                                 }
                                             </div>
                                             :
-                                            <div className="w-full mt-3 bg-primary-black px-3 py-4 text-[14px] rounded-md">نظری برای این محصول ثبت نشده !</div>
+                                            <div className="w-full mt-3 bg-primary-black px-3 py-4 text-[14px] rounded-md">نظری برای این المنتج ثبت نشده !</div>
                                     }
                                 </div>
                             </div>

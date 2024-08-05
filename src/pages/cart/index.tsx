@@ -146,7 +146,7 @@ const Card = () => {
                                         ?
                                         <thead>
                                             <tr className="bg-primary-black w-full ch:p-5">
-                                                <th className="max-w-full w-full">محصول</th>
+                                                <th className="max-w-full w-full">المنتج</th>
                                                 <th className="min-w-[140px] whitespace-nowrap">قیمت(بدون تخفیف)</th>
                                                 <th className="min-w-[60px]">تعداد</th>
                                                 <th className="min-w-[120px]">جمع کل</th>
@@ -246,7 +246,7 @@ const Card = () => {
                             </div>
 
 
-                            <Button filled text="ادامه جهت تسویه حساب" fn={() => BasketItem?.length ? navigate.push('/checkout') : showToast(false, 'محصولی برای پرداخت وجود نداره ها')} />
+                            <Button filled text="ادامه جهت تسویه حساب" fn={() => BasketItem?.length ? navigate.push('/checkout') : showToast(false, 'المنتجی برای پرداخت وجود نداره ها')} />
                         </div>
                     </div>
 

@@ -75,15 +75,15 @@ export default function Header() {
                         <input onKeyDown={e => e.key == "Enter" && globalSearch()}
                             ref={textInputElem}
                             className=" bg-transparent w-full text-sm " type="text"
-                            placeholder="محصول خود را بیابید..." />
+                            placeholder="المنتج خود را بیابید..." />
                     </div>
 
 
                     <div className="flex-center gap-12 text-description-text ">
                         <div className="lg:flex items-center justify-center gap-1 hidden">
                             <div className="text-left">
-                                <div>۰۲۱۹۸۷۶۵</div>
-                                <div className="text-blue-dark">۰۳۱۴۴۵۵۶۶۷۷</div>
+                                <div>1234567</div>
+                                <div className="text-blue-dark">1234567</div>
                             </div>
                             <MdPhoneInTalk className="size-7 text-blue-dark" />
                         </div>
@@ -123,56 +123,56 @@ export default function Header() {
                                 title="کامپیوتر" screen="large"
                                 Icon={<FaComputer className="size-5" />}
                                 submenus={[
-                                    { title: 'کامپیوتر گیمینگ', path: '/products/category/pc?filter=gaming' },
-                                    { title: 'کامپیوتر اقتصادی', path: '/products/category/pc?filter=affordable' },
-                                    { title: 'کامپیوتر دانشجویی', path: '/products/category/pc?filter=student' },
+                                    { title: 'كمبيوترات العاب', path: '/products/category/pc?filter=gaming' },
+                                    { title: 'كمبيوترات  اقتصادية', path: '/products/category/pc?filter=affordable' },
+                                    { title: 'كمبيوترات طلاب', path: '/products/category/pc?filter=student' },
                                     { title: 'کامپیوتر رندرینک', path: '/products/category/pc?filter=rendering' },
-                                    { title: 'سیستم اداری', path: '/products/category/pc?filter=office' },
+                                    { title: 'كمبيوترات مكتبية', path: '/products/category/pc?filter=office' },
                                 ]}
                             />
                             <Category
-                                key={'لپتاپ'}
-                                title="لپتاپ" screen="large"
+                                key={'لابتوب'}
+                                title="لابتوب" screen="large"
                                 Icon={<IoIosLaptop className="size-6" />}
                                 submenus={[
-                                    { title: 'لپتاپ Lonovo ', path: '/products/category/laptop/lenovo' },
-                                    { title: 'لپتاپ Asus ', path: '/products/category/laptop/asus' },
-                                    { title: 'لپتاپ Msi ', path: '/products/category/laptop/msi' },
-                                    { title: 'لپتاپ Hp ', path: '/products/category/laptop/hp' },
-                                    { title: 'لپتاپ Acer ', path: '/products/category/laptop/acer' },
+                                    { title: 'لابتوبLonovo ', path: '/products/category/laptop/lenovo' },
+                                    { title: 'لابتوبAsus ', path: '/products/category/laptop/asus' },
+                                    { title: 'لابتوبMsi ', path: '/products/category/laptop/msi' },
+                                    { title: 'لابتوبHp ', path: '/products/category/laptop/hp' },
+                                    { title: 'لابتوبAcer ', path: '/products/category/laptop/acer' },
                                 ]}
                             />
                             <Category
                                 key={'قطعات'}
-                                title="قطعات کامپیوتر" screen="large"
+                                title="اكسسوارات" screen="large"
                                 Icon={<HiOutlineCpuChip className="size-6" />}
                                 submenus={[
-                                    { title: 'مادربرد', path: '/products/category/parts/motherboard' },
-                                    { title: 'سیپیو', path: '/products/category/parts/cpu' },
-                                    { title: 'کارت گرافیک', path: '/products/category/parts/gpu' },
-                                    { title: 'رم', path: '/products/category/parts/ram' },
-                                    { title: 'خنک کننده', path: '/products/category/parts/cooler' },
+                                    { title: 'ماذاربورد', path: '/products/category/parts/motherboard' },
+                                    { title: 'وحدة المعالجة المركزية', path: '/products/category/parts/cpu' },
+                                    { title: 'كرت شاشة', path: '/products/category/parts/gpu' },
+                                    { title: 'رام', path: '/products/category/parts/ram' },
+                                    { title: 'وحدة تبريد', path: '/products/category/parts/cooler' },
                                     { title: 'حافظه SSD', path: '/products/category/parts/ssd' },
                                 ]}
                             />
                             <Category
                                 key={'لوازم'}
-                                title="لوازم جانبی" screen="large"
+                                title="قطع كمبيوتر" screen="large"
                                 Icon={<PiHeadphones className="size-6" />}
                                 submenus={[
-                                    { title: 'موس', path: '/products/category/accessory/mouse' },
-                                    { title: 'کیبرد', path: '/products/category/accessory/keyboard' },
-                                    { title: 'هدفون', path: '/products/category/accessory/headphone' },
-                                    { title: 'وبکم', path: '/products/category/accessory/webcam' },
+                                    { title: 'ماوس', path: '/products/category/accessory/mouse' },
+                                    { title: 'كيبورد', path: '/products/category/accessory/keyboard' },
+                                    { title: 'سماعات اذن', path: '/products/category/accessory/headphone' },
+                                    { title: 'كاميرات', path: '/products/category/accessory/webcam' },
                                 ]}
                             />
                             <Category
                                 key={'کنسول'}
-                                title="کنسول بازی" screen="large"
+                                title="الالعاب" screen="large"
                                 Icon={<GiConsoleController className="size-6" />}
                                 submenus={[
-                                    { title: 'کنسول ps5', path: '/products/category/console/ps5' },
-                                    { title: 'کنسول xbox', path: '/products/category/console/xbox' },
+                                    { title: 'ps5', path: '/products/category/console/ps5' },
+                                    { title: 'xbox', path: '/products/category/console/xbox' },
                                 ]}
                             />
                         </ul>

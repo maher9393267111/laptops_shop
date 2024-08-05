@@ -122,11 +122,11 @@ const Profile = () => {
         switch (activeMenu) {
             case "orders":
                 setUserDataToRender(
-                    <UserPanelTemplate title="سفارش های من">
+                    <UserPanelTemplate title="الطلباتی من">
                         <div className="flex flex-wrap md:flex-nowrap items-center justify-evenly gap-4 border-gray-700 p-3">
                             <OrderStatus count={processing} status="PROCESSING" text="جاری" />
                             <OrderStatus count={delivered} status="DELIVERED" text="تحویل شده" />
-                            <OrderStatus count={canceled} status="CANCELED" text="لغو شده" />
+                            <OrderStatus count={canceled} status="CANCELED" text="الغاء شده" />
                         </div>
 
                         <div className="w-4/5 m-auto border border-gold my-2 rounded-t-xl"></div>
@@ -172,24 +172,24 @@ const Profile = () => {
                                     }
                                 </div>
                                 :
-                                <div className="flex-center pb-6 text-[17px] font-peyda text-center text-white-red">محصولی یافت نشد</div>
+                                <div className="flex-center pb-6 text-[17px] font-peyda text-center text-white-red">المنتجی یافت نشد</div>
                         }
                     </UserPanelTemplate >
                 );
                 break;
             case "comments":
                 setUserDataToRender(
-                    <UserPanelTemplate title="کامنت های من">
+                    <UserPanelTemplate title="التعليقاتی من">
                         {
                             <div className="w-full m-auto flex-center">
                                 <table className="bg-primary-black w-full p-3 text-center text-[15px] rounded-md shadow-regular my-4 mx-4">
 
                                     <thead className="bg-secondary-black/50 sm:text-[15px] text-[13px] font-peyda text-title-text">
                                         <tr className="ch:py-4">
-                                            <th>شناسه</th>
+                                            <th>رمز التعريف</th>
                                             <th>تاریخ</th>
                                             <th>کالا</th>
-                                            <th>امتیاز</th>
+                                            <th>نتيجة</th>
                                             <th>وضعیت</th>
                                             <th>پیام</th>
                                         </tr>
@@ -212,7 +212,7 @@ const Profile = () => {
                 break;
             case "messages":
                 setUserDataToRender(
-                    <UserPanelTemplate title="پیغام‌ها">
+                    <UserPanelTemplate title="الاشعارات">
                         <div className="flex flex-col gap-2 p-3">
                             {
                                 Notification?.length
@@ -236,7 +236,7 @@ const Profile = () => {
                 break;
             default:
                 setUserDataToRender(
-                    <UserPanelTemplate title="اطلاعات شخصی">
+                    <UserPanelTemplate title="المعلومات الشخصية">
 
                         <ProfileData _id={data?._id || _id} userProfile={data?.profile || profile} />
 
@@ -245,7 +245,7 @@ const Profile = () => {
                             <UserDataUpdater
                                 dataEditorCloser={dataEditorCloser}
                                 name="nameLastName"
-                                title="نام و نام خانوادگی"
+                                title="الاسم الأول والاسم الأخير"
                                 inputValue={nameLastName || ''}
                                 readOnly={!activeEditShown?.fullName}
                                 editToggle={() => activeEditChanger("fullName")}
@@ -254,7 +254,7 @@ const Profile = () => {
                             <UserDataUpdater
                                 dataEditorCloser={dataEditorCloser}
                                 name="username"
-                                title="نام کاربری"
+                                title="اسم المستخدم"
                                 inputValue={username || ''}
                                 readOnly={!activeEditShown?.username}
                                 editToggle={() => activeEditChanger("username")}
@@ -263,7 +263,7 @@ const Profile = () => {
                             <UserDataUpdater
                                 dataEditorCloser={dataEditorCloser}
                                 name="nationalCode"
-                                title="کد ملی"
+                                title="الرمز الدولي"
                                 inputValue={nationalCode || ''}
                                 readOnly={!activeEditShown?.nationalCode}
                                 editToggle={() => activeEditChanger("nationalCode")}
@@ -272,7 +272,7 @@ const Profile = () => {
                             <UserDataUpdater
                                 dataEditorCloser={dataEditorCloser}
                                 name="phoneNumber"
-                                title="شماره موبایل"
+                                title="رقم الهاتف"
                                 inputValue={phoneNumber || ''}
                                 readOnly={!activeEditShown?.phoneNumber}
                                 editToggle={() => activeEditChanger("phoneNumber")}
@@ -282,7 +282,7 @@ const Profile = () => {
                                 dataEditorCloser={dataEditorCloser}
                                 editAble={false}
                                 name="email"
-                                title={"ایمیل"}
+                                title={"الايميل"}
                                 inputValue={email || ''}
                                 readOnly={!activeEditShown?.email}
                                 editToggle={() => activeEditChanger("email")}
@@ -291,7 +291,7 @@ const Profile = () => {
                             <UserDataUpdater
                                 dataEditorCloser={dataEditorCloser}
                                 name="changePass"
-                                title="تغییر رمز عبور"
+                                title="تغيير كلمة المرور"
                                 inputValue={''}
                                 readOnly={!activeEditShown?.changePass}
                                 editToggle={() => activeEditChanger("changePass")}
@@ -352,18 +352,18 @@ const Profile = () => {
 
                     <div onClick={() => dispatch(changeProfileActiveMenu("account-details"))} className={`flex items-center gap-2 border-b ${activeMenu == "account-details" && "activeMenu ch:mr-2"} border-gray-600/15 pb-3 cursor-pointer hover:bg-black/15`}>
                         <FaRegUser className="size-5" />
-                        <p>اطلاعات حساب کاربری</p>
+                        <p>معلومات حساب المستخدم</p>
                     </div>
 
                     <div onClick={() => dispatch(changeProfileActiveMenu("orders"))} className={`flex ${activeMenu == "orders" && "activeMenu ch:mr-2"} items-center relative gap-2 border-b border-gray-600/15 pb-3 cursor-pointer hover:bg-black/15`}>
                         <IoBagHandleOutline className="size-5" />
-                        <p>سفارش ها</p>
+                        <p>الطلبات</p>
                     </div>
 
                     <div onClick={() => dispatch(changeProfileActiveMenu("likes"))} className={`flex ${activeMenu == "likes" && "activeMenu ch:mr-2"} items-center gap-2 border-b border-gray-600/15 pb-3 cursor-pointer justify-between hover:bg-black/15`}>
                         <div className="flex items-center gap-2">
                             <FaRegHeart className="size-[17px]" />
-                            <p>لیست های من</p>
+                            <p>تسجيلات الاعجاب</p>
                         </div>
                         {Wish?.length ? <div className="bg-white-red text-[15px] flex-center size-5 rounded-sm mr-auto text-center">{Wish?.length}</div> : <></>}
                     </div>
@@ -371,7 +371,7 @@ const Profile = () => {
                     <div onClick={() => dispatch(changeProfileActiveMenu("comments"))} className={`flex ${activeMenu == "comments" && "activeMenu ch:mr-2"} items-center gap-2 border-b border-gray-600/15 pb-3 cursor-pointer justify-between hover:bg-black/15`}>
                         <div className="flex items-center gap-2">
                             <FaRegCommentAlt className="size-[17px]" />
-                            <p>کامنت ها</p>
+                            <p>التعليقات</p>
                         </div>
                         {Comment?.length ? <div className="bg-white-red text-[15px] flex-center size-5 rounded-sm mr-auto text-center">{Comment?.length}</div> : <></>}
                     </div>
@@ -379,7 +379,7 @@ const Profile = () => {
                     <div onClick={() => dispatch(changeProfileActiveMenu("messages"))} className={`flex items-center ${activeMenu == "messages" && "activeMenu ch:mr-2"} justify-between border-b border-gray-600/15 pb-3 cursor-pointer hover:bg-black/15`}>
                         <div className="flex items-center gap-2">
                             <FaRegBell className="size-5" />
-                            <p>پیغام‌ها</p>
+                            <p>الاشعارات</p>
                         </div>
                         {Notification?.length ? <div className="bg-white-red text-[15px] flex-center size-5 rounded-sm mr-auto text-center">{Notification?.length}</div> : <></>}
                     </div>

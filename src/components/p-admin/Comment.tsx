@@ -47,7 +47,7 @@ const Comment = ({ creator, accepted, _id, body, rate, productID, createdAt, row
             message: productID.name,
             cancelBtnText: false,
             status: true,
-            title: 'محصول تارگت',
+            title: 'المنتج تارگت',
         } as ModalProps))
     }
 

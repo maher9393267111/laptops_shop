@@ -58,13 +58,13 @@ const Login = () => {
                 <form className="bg-title-text relative pt-12 rounded-tl-[40px] px-2 bottom-12">
 
                     <div className="flex flex-col p-2 text-[13px] gap-2">
-                        <label className="text-black mr-6 font-bold" htmlFor="name">نام کاربری یا ایمیل</label>
+                        <label className="text-black mr-6 font-bold" htmlFor="name">اسم المستخدم یا الايميل</label>
                         <input
                             value={loginForm?.payload ?? ''}
                             onChange={e => formUpdater("payload", e.target.value)}
                             className="p-3 input-shadow rounded-lg placeholder:text-[12px] text-[15px] text-gray-500 outline-none"
                             type="text"
-                            placeholder="نام کاربری / ایمیل" />
+                            placeholder="اسم المستخدم / الايميل" />
                     </div>
 
                     <div className="flex flex-col p-2 text-[13px] gap-2">

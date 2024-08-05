@@ -22,7 +22,7 @@ const Modal = () => {
 
     const modalData: ModalProps = useAppSelector(state => state.globalVarsSlice.modalData)
 
-    const { status, isShown, title, message, fn, onCancel, loader = false, okBtnText = 'تایید', cancelBtnText = 'لغو' } = modalData
+    const { status, isShown, title, message, fn, onCancel, loader = false, okBtnText = 'تایید', cancelBtnText = 'الغاء' } = modalData
 
     const [moveModal, setMoveModal] = useState(false)
 

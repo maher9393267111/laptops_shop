@@ -31,7 +31,7 @@ const Transaction = ({ _id, createdAt, status, productsList, totalPrice }: Trans
                                 ?
                                 'درحال ارسال'
                                 :
-                                'لغو شده'
+                                'الغاء شده'
                     }
                 </div>
             </td>

@@ -24,7 +24,7 @@ const CustomersReview = () => {
 
             <div className='flex items-center justify-between relative'>
                 <div>
-                    <h4 className='font-bold text-2xl text-panel-darkTitle font-peyda'>نظرات مشتری ها</h4>
+                    <h4 className='font-bold text-2xl text-panel-darkTitle font-peyda'>تعليقات العملاء</h4>
                     <p className='font-sans text-[12px] text-panel-caption flex items-center justify-start'>جدید ترین نظرات ثبت شده توسط خریداران</p>
                 </div>
             </div>

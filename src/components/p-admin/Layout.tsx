@@ -91,42 +91,42 @@ const Layout = ({ children }: { children: ReactNode }) => {
 
                             <PageLinks
                                 Icon={<RiShoppingBasket2Line />}
-                                title={'محصولات'}
+                                title={'المنتجات'}
                                 path='/admin-panel/products'
                                 key={'products'}
                             />
 
                             <PageLinks
                                 Icon={<FiUsers />}
-                                title={'کاربران'}
+                                title={'المستخدمين'}
                                 path='/admin-panel/users'
                                 key={'users'}
                             />
 
                             <PageLinks
                                 Icon={<RiFileList3Line />}
-                                title={'تراکنش ها'}
+                                title={'الدفعات'}
                                 path='/admin-panel/transactions'
                                 key={'transactions'}
                             />
 
                             <PageLinks
                                 Icon={<RiDiscountPercentLine />}
-                                title={'کدهای تخفیف'}
+                                title={'الخصومات'}
                                 path='/admin-panel/discounts'
                                 key={'discounts'}
                             />
 
                             <PageLinks
                                 Icon={<LiaComment />}
-                                title={'کامنت ها'}
+                                title={'التعليقات'}
                                 path='/admin-panel/comments'
                                 key={'comments'}
                             />
 
                             <PageLinks
                                 Icon={<MdNotificationsNone />}
-                                title={'ارسال پیام'}
+                                title={'الاشعارات'}
                                 path='/admin-panel/notifications'
                                 key={'settings'}
                             />
@@ -172,7 +172,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
                         <div className='inline-block border h-px rotate-90 border-[#D0D6DE] px-6'></div>
 
                         <div className='flex items-center gap-4'>
-                            <div className='text-[16px] xl:block font-peyda hidden text-panel-darkTitle'>خوش اومدی <span className='text-[15px] font-bold px-px'>{nameLastName || username}</span></div>
+                            <div className='text-[16px] xl:block font-peyda hidden text-panel-darkTitle'>مرحباً <span className='text-[15px] font-bold px-px'>{nameLastName || username}</span></div>
                             <Link href={'/profile'} className='size-[56px] bg-white flex-center rounded-full shadow-sm'>
                                 {
                                     profile

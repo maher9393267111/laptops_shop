@@ -86,9 +86,9 @@ const User = ({ nameLastName, email, role, username, isBan, rowNumber, _id, user
 
         dispatch(modalDataUpdater({
             isShown: true,
-            message: `آیا از تغییر نقش به ${role == 'USER' ? 'ادمین' : 'کاربر'} اطمینان دارید؟`,
+            message: `آیا از تغییر الدور به ${role == 'USER' ? 'ادمین' : 'کاربر'} اطمینان دارید؟`,
             status: false,
-            title: 'تغییر نقش',
+            title: 'تغییر الدور',
 
             fn: async () => {
 

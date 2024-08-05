@@ -6,37 +6,37 @@ const VisitsChartDate = ({ visitsData }: Partial<MainPageDashboardProps>) => {
 
     let currentAndLastWeekVisitData = [
         {
-            name: 'شنبه',
+            name: 'السبت',
             "هفته قبل": 0,
             "هفته فعلی": 0
         },
         {
-            name: 'یکشنبه',
+            name: 'الاحد',
             "هفته قبل": 0,
             "هفته فعلی": 0
         },
         {
-            name: 'دوشنبه',
+            name: 'الاثنين',
             "هفته قبل": 0,
             "هفته فعلی": 0
         },
         {
-            name: 'سه‌شنبه',
+            name: 'الثلاثاء',
             "هفته قبل": 0,
             "هفته فعلی": 0
         },
         {
-            name: 'چهارشنبه',
+            name: 'الاربعاء',
             "هفته قبل": 0,
             "هفته فعلی": 0
         },
         {
-            name: 'پنج‌شنبه',
+            name: 'الخميس',
             "هفته قبل": 0,
             "هفته فعلی": 0
         },
         {
-            name: 'جمعه',
+            name: 'الجمعة',
             "هفته قبل": 0,
             "هفته فعلی": 0
         },
@@ -66,7 +66,7 @@ const VisitsChartDate = ({ visitsData }: Partial<MainPageDashboardProps>) => {
         const weekday = getCurrentPersianWeekday(visitsWeekDay);
         const chartItemIndex = currentAndLastWeekVisitData.findIndex(chartData => chartData.name === weekday);
 
-        if (chartItemIndex !== -1 && (currentDay >= visitsWeekDay || visitsWeekDay == 6)) { // wtf is visitsWeekDay == 6 ? in iran its شنبه , so we always want to show it
+        if (chartItemIndex !== -1 && (currentDay >= visitsWeekDay || visitsWeekDay == 6)) { // wtf is visitsWeekDay == 6 ? in iran its السبت , so we always want to show it
             currentAndLastWeekVisitData[chartItemIndex] = {
                 ...currentAndLastWeekVisitData[chartItemIndex],
                 ["هفته فعلی"]: currentAndLastWeekVisitData[chartItemIndex]["هفته فعلی"] += data.count
@@ -78,8 +78,8 @@ const VisitsChartDate = ({ visitsData }: Partial<MainPageDashboardProps>) => {
         <div className='bg-white rounded-xl flex-1 shadow-sm flex flex-col w-full gap-3 p-6 xl:h-[430px] h-auto'>
 
             <div>
-                <h4 className='font-bold text-2xl text-panel-darkTitle font-peyda'>نمودار بازدید ها</h4>
-                <p className='font-sans text-[12px] text-panel-caption flex items-center justify-start'>نمودار تعداد بازدید ها در روز های مختلف هفته</p>
+                <h4 className='font-bold text-2xl text-panel-darkTitle font-peyda'>مخطط الزيارات</h4>
+                <p className='font-sans text-[12px] text-panel-caption flex items-center justify-start'>رسم بياني لعدد الزيارات في أيام الأسبوع المختلفة</p>
             </div>
 
             <ResponsiveContainer className={'text-panel-caption text-sm font-peyda'} width="100%" height="100%">

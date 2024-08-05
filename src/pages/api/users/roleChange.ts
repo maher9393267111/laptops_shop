@@ -23,7 +23,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         userTarget.role = userTarget.role === 'ADMIN' ? 'USER' : 'ADMIN'
         await userTarget.save()
 
-        return res.status(200).json({ message: `نقش کاربر مورد نظر تغییر یافت` })
+        return res.status(200).json({ message: `الدور کاربر مورد نظر تغییر یافت` })
 
     } catch (err) {
         console.log(err)
