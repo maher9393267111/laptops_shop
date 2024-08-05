@@ -24,7 +24,7 @@ export default function Header() {
     const textInputElem = useRef<HTMLInputElement | null>(null)
     const { isLogin, data } = useAppSelector(state => state.userSlice)
     const { BasketItem, Notification } = useAppSelector(state => state.userSlice.relatedData) || []
-
+console.log("BASKET--🔷️🔶️🔷️🔶️🔷️🔶️🔷️🔶️🔷️🔶️🔷️🔶️🔷️🔶️🔷️🔶️🔷️🔶️->" , BasketItem)
     const menusShown = useAppSelector(state => state.globalVarsSlice.isScrolledDown)
 
     const globalSearch = () => {

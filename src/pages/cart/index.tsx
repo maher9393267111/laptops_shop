@@ -123,7 +123,7 @@ const Card = () => {
                                 {
                                     BasketItem?.length
                                         ?
-                                        BasketItem.map(({ productID, count, services }) => {
+                                        BasketItem?.map(({ productID, count, services }) => {
                                             return <ProductCart
                                                 key={productID?._id}
                                                 title={productID?.name}
