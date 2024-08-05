@@ -65,7 +65,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     } catch (err) {
         console.log(err)
-        return res.status(500).json({ message: 'internal error happened' })
+        return res.status(500).json({ message: 'internal error happened' ,err:err })
     }
 }
 
