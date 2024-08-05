@@ -109,10 +109,10 @@ const Product = ({ productData, useMotion = true }: Props) => {
                 {
                     discount
                         ?
-                        <div className="red-line-through text-white ">{Number(price)?.toLocaleString('fa-IR')}</div>
+                        <div className="red-line-through text-white ">{Number(price)}</div>
                         : null
                 }
-                <div className="text-blue-white">{priceAfterOff.toLocaleString('fa-IR')} <span className="text-[10px] text-title-text">ريال</span></div>
+                <div className="text-blue-white">{priceAfterOff} <span className="text-[10px] text-title-text">ريال</span></div>
             </div>
 
             <Link href={`/products/search/${_id}`} className="text-center px-3 transition-all min-h-[50px] h-full line-clamp-2 hover:text-blue-dark duration-300 cursor-pointer text-title-text break-all leading-[25px] my-4 ">{name}</Link>

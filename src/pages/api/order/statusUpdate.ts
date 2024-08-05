@@ -22,7 +22,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             })
         }
 
-        return res.status(200).json({ message: `حالة الطلب به ${status == 'CANCELED' ? '"الغاء شده"' : status == 'PROCESSING' ? '"درحال ارسال"' : '"ارسال شده"'} تغییر یافت` })
+        return res.status(200).json({ message: `حالة الطلب به ${status == 'CANCELED' ? '"الغاء شده"' : status == 'PROCESSING' ? '"مرحلة الارسال"' : '"الطلبيات المرسلة"'} تغییر یافت` })
 
     } catch (err) {
         console.log(err)

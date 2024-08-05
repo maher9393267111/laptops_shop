@@ -138,8 +138,8 @@ const Profile = () => {
                                     <tr className="ch:py-4">
                                         <th>کد سفارش</th>
                                         <th>تاریخ خرید</th>
-                                        <th>تعداد</th>
-                                        <th>قیمت</th>
+                                        <th>العدد</th>
+                                        <th>السعر</th>
                                         <th>وضعیت</th>
                                         <th>جزئیات</th>
                                     </tr>
@@ -179,7 +179,7 @@ const Profile = () => {
                 break;
             case "comments":
                 setUserDataToRender(
-                    <UserPanelTemplate title="التعليقاتی من">
+                    <UserPanelTemplate title=" التعليقاتی من">
                         {
                             <div className="w-full m-auto flex-center">
                                 <table className="bg-primary-black w-full p-3 text-center text-[15px] rounded-md shadow-regular my-4 mx-4">
@@ -371,7 +371,7 @@ const Profile = () => {
                     <div onClick={() => dispatch(changeProfileActiveMenu("comments"))} className={`flex ${activeMenu == "comments" && "activeMenu ch:mr-2"} items-center gap-2 border-b border-gray-600/15 pb-3 cursor-pointer justify-between hover:bg-black/15`}>
                         <div className="flex items-center gap-2">
                             <FaRegCommentAlt className="size-[17px]" />
-                            <p>التعليقات</p>
+                            <p> التعليقات</p>
                         </div>
                         {Comment?.length ? <div className="bg-white-red text-[15px] flex-center size-5 rounded-sm mr-auto text-center">{Comment?.length}</div> : <></>}
                     </div>

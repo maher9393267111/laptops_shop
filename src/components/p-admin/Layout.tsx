@@ -74,7 +74,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
                     <div>
                         <Link href={'/'} className='flex items-start justify-center gap-px flex-col'>
                             <div className='relative xl:block hidden'>
-                                <h1 className='text-[#333333] font-extrabold text-[25px] font-peyda'>پیسی کالا</h1>
+                                <h1 className='text-[#333333] font-extrabold text-[25px] font-peyda'>متجر الكترونيات</h1>
                                 <span className='absolute size-2 rounded-full bg-panel-darkGreen bottom-2 -left-3'></span>
                             </div>
                             <div className='xl:hidden block'><Image width={100} height={100} quality={100} alt='pc-kala favicon' src='/images/fav-logo.png' /></div>
@@ -119,7 +119,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
 
                             <PageLinks
                                 Icon={<LiaComment />}
-                                title={'التعليقات'}
+                                title={' التعليقات'}
                                 path='/admin-panel/comments'
                                 key={'comments'}
                             />

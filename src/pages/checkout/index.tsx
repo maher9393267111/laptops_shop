@@ -88,7 +88,7 @@ const Checkout = () => {
         } // here we just check all values to not be empty
 
         if (formData.name.trim().length > 20 || formData.name.trim().length < 3) return showToast(false, 'نام باید بیشتر از 3 و کمتر از 20 کاراکتر باشد')
-        if (formData.lName.trim().length > 20 || formData.lName.trim().length < 3) return showToast(false, 'نام خانوادگی باید بیشتر از 3 و کمتر از 20 کاراکتر باشد')
+        if (formData.lName.trim().length > 20 || formData.lName.trim().length < 3) return showToast(false, 'اسم العائلة باید بیشتر از 3 و کمتر از 20 کاراکتر باشد')
         if (isNaN(+formData.codePost) || formData.codePost.trim().length != 10) return showToast(false, 'کد پستی یک عدد ده رقمی است')
         if (!/^09\d{9}$/.test(formData.phoneNum)) return showToast(false, 'رقم الهاتف معتبر نیست')
         if (!doesUserAccept) return showToast(false, 'موافقت با الأحكام والشروط الزامی است')
@@ -143,30 +143,30 @@ const Checkout = () => {
                     <div className="flex overflow-hidden flex-col lg:flex-row items-center gap-3">
 
                         <div data-aos-duration="550" data-aos="fade-left" className="flex-1 w-full mb-auto">
-                            <h3 className="text-white py-8">جزئیات صورتحساب</h3>
+                            <h3 className="text-white py-8">تفاصيل الفاتورة</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 ch:mb-4">
-                                <Input fn={inputUpdater} name="name" title="نام" />
-                                <Input fn={inputUpdater} name="lName" title="نام خانوادگی" />
-                                <Input fn={inputUpdater} name="ostan" title="استان">
-                                    <option disabled value={0} selected>استان مورد نظر را انتخاب کنید</option>
-                                    <option value="نهران">تهران</option>
-                                    <option value="خراسان رضوی">خراسان رضوی</option>
-                                    <option value="اصفهان">اصفهان</option>
-                                    <option value="شیراز">شیراز</option>
+                                <Input fn={inputUpdater} name="name" title="الاسم" />
+                                <Input fn={inputUpdater} name="lName" title="اسم العائلة" />
+                                <Input fn={inputUpdater} name="ostan" title="الولاية">
+                                    <option disabled value={0} selected> اختيار المدينة</option>
+                                    <option value="نهران"> الرياض</option>
+                                    <option value="خراسان رضوی"> جدة</option>
+                                    <option value="اصفهان"> الدمام</option>
+                                    <option value="شیراز"> الشرقية</option>
                                 </Input>
-                                <Input fn={inputUpdater} name="province" title="خیابان" />
-                                <Input fn={inputUpdater} name="codePost" title="کد پستی (ده رقمی)" />
+                                <Input fn={inputUpdater} name="province" title="الشارع" />
+                                <Input fn={inputUpdater} name="codePost" title="الرمز البريدي" />
                                 <Input fn={inputUpdater} name="phoneNum" title="رقم الهاتف" type="number" placeHolder="09123456789" />
-                                <Input fn={inputUpdater} name="email" title="پست الکترونیک (اختیاری)" required={false} type="email" placeHolder={"gmail.com@"} />
+                                <Input fn={inputUpdater} name="email" title="البريد الالكتروني (اختیاری)" required={false} type="email" placeHolder={"gmail.com@"} />
                             </div>
 
                             <div className="flex justify-center text-[13px] text-description-text mt-4 gap-3 flex-col">
 
-                                <p>توضیحات سفارش (اختیاری)</p>
+                                <p>وصف الطلب (اختیاری)</p>
 
                                 <textarea onChange={e => inputUpdater("orderDetails", e.target.value)}
                                     className="appearance w-full placeholder:text-[12px] h-[80px] max-h-[200px] bg-primary-black outline-none border rounded-md border-white/20 p-2"
-                                    placeholder="یادداشت‌ها درباره سفارش شما، برای مثال نکات مهم درباره نحوه تحویل سفارش"
+                                    placeholder=""
                                     cols={30} rows={10}>
                                 </textarea>
 
@@ -174,14 +174,14 @@ const Checkout = () => {
                         </div>
 
                         <div data-aos-duration="550" data-aos="fade-right" className="flex-1 mb-auto space-y-4">
-                            <h3 className="text-white py-4">سفارش شما</h3>
+                            <h3 className="text-white py-4">طلبك</h3>
 
                             <table className="w-full border border-gold/25 rounded-md text-description-text">
 
                                 <thead className="bg-primary-black text-[12px]">
                                     <tr>
                                         <td className={`p-3`}>المنتج</td>
-                                        <td>قیمت</td>
+                                        <td>السعر</td>
                                     </tr>
                                 </thead>
 
@@ -200,24 +200,30 @@ const Checkout = () => {
                                                 </td>
 
                                                 <td className={"text-nowrap p-3 border-r-2 border-gray-600 text-[13px]"}>
-                                                    <span className={"text-blue-white"}>{(totalPriceCalculator(productID?.price, productID?.discount, count, services)).toLocaleString('fa-IR')}</span> ريال
+                                                    <span className={"text-blue-white"}>{(totalPriceCalculator(productID?.price, productID?.discount, count, services))}</span> ريال
                                                 </td>
                                             </tr>)
                                         )
                                     }
 
-                                    <TableData title={"حمل و نقل"}><p className={"max-w-70 text-wrap"}>ارسال توسط تیپاکس، اتوبوس، باربری به تشخیص فروشگاه (پس کرایه)</p></TableData>
-                                    <TableData title={"مجموع (قیمت نهایی)"}><p className={"max-w-70 text-wrap"}><span className={"text-blue-white"}>{sumOfProductsWithDiscount.toLocaleString('fa-IR')}</span> ريال</p></TableData>
+                                    <TableData title={"حمل و نقل"}><p className={"max-w-70 text-wrap"}>الإرسال عن طريق تيباكس أو الحافلة أو الشحن حسب تقدير المتجر (بعد الأجرة)</p></TableData>
+                                    <TableData title={"مجموع (السعر النهائي)"}><p className={"max-w-70 text-wrap"}><span className={"text-blue-white"}>
+                                    {/* toLocaleString('fa-IR') */}
+                                        
+                                        {sumOfProductsWithDiscount}</span> ريال</p></TableData>
                                 </tbody>
 
                             </table>
 
-                            <p className="border leading-[32px] text-description-text rounded-md border-gold/25 p-3">مشتری عزیز، المنتجاتی که بالای 100 میلیون ريال هستند با درگاه پرداخت نمی توان آن ها را پرداخت کرد، لطفا برای گرفتن رمز التعريف حساب و یا راهنمایی بیشتر با رمز التعريف های 90909090909 ، 0909090909 تماس بگیرید.</p>
+                            <p className="border leading-[32px] text-description-text rounded-md border-gold/25 p-3">عزيزي العميل، المنتجات التي تزيد قيمتها عن 100 مليون ريال لا يمكن دفعها عبر بوابة الدفع، يرجى الاتصال على 90909090909، 0909090909 للحصول على كلمة مرور الحساب أو لمزيد من التوجيه.</p>
 
                             <div className="text-description-text rounded-md p-3">
                                 <div className="flex items-center gap-2">
                                     <input onChange={e => setDoesUserAccept(e.target.checked)} type="checkbox" />
-                                    <p className="text-gray-500 text-[12px]">من <Link href="/" className="text-white hover:text-blue-dark transition-all">شرایط و مقررات</Link> سایت را خوانده ام و آن را می پذیرم. </p>
+                                    <p className="text-gray-500 text-[12px]">من <Link href="/" className="text-white hover:text-blue-dark transition-all"> الشروط و القواعد</Link> 
+                                    لقد قرأت الموقع وأوافق عليه.
+                                    
+                                     </p>
                                 </div>
                             </div>
 
@@ -228,7 +234,7 @@ const Checkout = () => {
                                             ?
                                             <Loader />
                                             :
-                                            'ثبت سفارش'
+                                            'اتمام الطلب'
                                     }
                                 </button>
                             </div>

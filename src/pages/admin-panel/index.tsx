@@ -39,7 +39,7 @@ const MainAdminPage = ({ totalIncome, transactions, transactionsData, performanc
                         condition={`${pending.percentage >= 0 ? 'up' : 'down'}`}
                         src='/images/totalOrder.svg'
                         bottomTitle={`${pending.percentage < -100 ? -100 : pending.percentage > 100 ? 100 : pending.percentage}% (این ماه)`}
-                        title='درحال ارسال'
+                        title='مرحلة الارسال'
                     />
 
                     <OrderCard
@@ -47,7 +47,7 @@ const MainAdminPage = ({ totalIncome, transactions, transactionsData, performanc
                         condition={`${delivered.percentage >= 0 ? 'up' : 'down'}`}
                         src='/images/totalDeliver.svg'
                         bottomTitle={`${delivered.percentage < -100 ? -100 : delivered.percentage > 100 ? 100 : delivered.percentage}% (این ماه)`}
-                        title='ارسال شده'
+                        title='الطلبيات المرسلة'
                     />
 
                     <OrderCard
@@ -55,7 +55,7 @@ const MainAdminPage = ({ totalIncome, transactions, transactionsData, performanc
                         condition={`${rejected.percentage >= 0 ? 'up' : 'down'}`}
                         src='/images/totalCancel.svg'
                         bottomTitle={`${rejected.percentage < -100 ? -100 : rejected.percentage > 100 ? 100 : rejected.percentage}% (این ماه)`}
-                        title='مرجوع شده'
+                        title='الطلبيات الملغاة'
                     />
 
                     <OrderCard
@@ -63,7 +63,7 @@ const MainAdminPage = ({ totalIncome, transactions, transactionsData, performanc
                         condition={`${performanceIndicators.totalIncomeGrowsPercentage.toString().includes('-') ? 'down' : 'up'}`}
                         src='/images/totalRevenue.svg'
                         bottomTitle={`${performanceIndicators.totalIncomeGrowsPercentage > 100 ? 100 : performanceIndicators.totalIncomeGrowsPercentage}% (این ماه)`}
-                        title='درامد'
+                        title='الدخل'
                     />
                 </div>
 

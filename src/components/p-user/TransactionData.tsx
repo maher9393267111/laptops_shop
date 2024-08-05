@@ -29,7 +29,7 @@ const Transaction = ({ _id, createdAt, status, productsList, totalPrice }: Trans
                             :
                             status == 'PROCESSING'
                                 ?
-                                'درحال ارسال'
+                                'مرحلة الارسال'
                                 :
                                 'الغاء شده'
                     }

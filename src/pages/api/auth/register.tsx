@@ -20,7 +20,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         const userData = await UserModel.create({ name, username, email, password, lastname })
 
-        await NotificationModel.create({ userID: userData._id, body: 'به خانواده پیسی کالا خوش امدید :)❤️' }) // a sign up notification message for our users:)
+        await NotificationModel.create({ userID: userData._id, body: 'به خانواده متجر الكترونيات خوش امدید :)❤️' }) // a sign up notification message for our users:)
 
         const token = tokenGenerator(userData.email, 7)
 

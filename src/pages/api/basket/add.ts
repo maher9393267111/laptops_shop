@@ -18,7 +18,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         if (isProductExistInBasket) { // if product exist, it means we are trying to update the current product fields
             await BasketItemModel.findOneAndUpdate({ productID, userID }, { count: count ?? isProductExistInBasket.count + 1, services })
-            return res.status(201).json({ message: count != isProductExistInBasket.count ? 'تعداد المنتج بروزرسانی شد' : 'خدمات المنتج بروزرسانی شد (:' })
+            return res.status(201).json({ message: count != isProductExistInBasket.count ? 'تم تحديث عدد المنتج ' : 'خدمات المنتج بروزرسانی شد (:' })
         }
 
         await BasketItemModel.create({ productID, userID, count: count ?? 1, services })

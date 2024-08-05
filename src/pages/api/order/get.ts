@@ -16,7 +16,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         const userTransactionsData = await transactionModel.find({ _id: userID })
 
-        return res.status(200).json({ message: 'سفارش شما با موفقیت الغاء شد', data: userTransactionsData })
+        return res.status(200).json({ message: 'طلبك با موفقیت الغاء شد', data: userTransactionsData })
 
     } catch (err) {
         console.log(err)

@@ -238,8 +238,8 @@ export default function Home({ products }: ProductsDataType) {
 
                     <p className="text-white text-3xl font-bold text-center mb-2 lg:text-start mt-12">اتصل بنا</p>
                     <p className="bold-title text-[30px] sm:text-[40px]">أسرع وسيلة للاتصال</p>
-                    <p className="sm:text-[60px] text-[40px] xl:text-[90px] text-white">۰۲۱-۱۲۳۴۵۶۷۸۹</p>
-                    <p className="bold-title text-[30px] sm:text-[40px]">۰۳۱-۹۸۷۶۵۴۳۲۱</p>
+                    <p className="sm:text-[60px] text-[40px] xl:text-[90px] text-white">012345678</p>
+                    <p className="bold-title text-[30px] sm:text-[40px]">0279124466</p>
 
                 </div>
             </section>

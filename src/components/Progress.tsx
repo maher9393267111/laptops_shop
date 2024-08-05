@@ -24,11 +24,11 @@ const Progress = () => {
             </div>
             <div className="flex items-center flex-col gap-2 z-30">
                 <CgFileDocument className="size-11 rounded-md text-dark-red/90 p-2 bg-secondary-black" />
-                <p className="text-description-text transition-all hover:text-white">جزئیات پرداخت</p>
+                <p className="text-description-text transition-all hover:text-white">بيانات الدفع</p>
             </div>
             <div className="flex items-center flex-col gap-2 z-30">
                 <CiDeliveryTruck className="size-12 rounded-md text-dark-red/90 p-2 bg-secondary-black" />
-                <p className="text-description-text transition-all hover:text-white">تکمیل سفارش</p>
+                <p className="text-description-text transition-all hover:text-white">إكمال الطلب</p>
             </div>
 
         </div>

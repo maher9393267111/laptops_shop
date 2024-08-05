@@ -57,7 +57,7 @@ const Comment = ({ _id, createdAt, productID, rate, accepted, body }: commentPro
                                 ?
                                 'رد شده'
                                 :
-                                'درحال بررسی'
+                                'قيد الانتظار'
                     }
                 </div>
             </td>

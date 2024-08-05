@@ -309,7 +309,7 @@ const removeProductFromBasket = async (productID: string, userID: string) => {
     }
 }
 
-const addProductToBasket: addProductFunctionProps<unknown> = async (userID, productID, count, dispatch, productServices = { 'گارانتی ۱۸ ماهه پیسی کالا': 0 }) => {
+const addProductToBasket: addProductFunctionProps<unknown> = async (userID, productID, count, dispatch, productServices = { '(ضمان المنتج لمدة 18 شهرًا)': 0 }) => {
 
     const res = await fetch('/api/basket/add', {
         method: "POST",

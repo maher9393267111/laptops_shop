@@ -75,7 +75,7 @@ export default function Header() {
                         <input onKeyDown={e => e.key == "Enter" && globalSearch()}
                             ref={textInputElem}
                             className=" bg-transparent w-full text-sm " type="text"
-                            placeholder="المنتج خود را بیابید..." />
+                            placeholder="البحث عن منتج" />
                     </div>
 
 
@@ -119,14 +119,14 @@ export default function Header() {
                     menusShown && <div data-aos-duration="400" data-aos="zoom-in-left" className={`container text-white overflow-visible relative`}>
                         <ul className="flex items-center lg:gap-[36px] gap-8 mt-5 text-[14px]">
                             <Category
-                                key={'کامپیوتر'}
-                                title="کامپیوتر" screen="large"
+                                key={'كمبيوتر'}
+                                title="كمبيوتر" screen="large"
                                 Icon={<FaComputer className="size-5" />}
                                 submenus={[
                                     { title: 'كمبيوترات العاب', path: '/products/category/pc?filter=gaming' },
                                     { title: 'كمبيوترات  اقتصادية', path: '/products/category/pc?filter=affordable' },
                                     { title: 'كمبيوترات طلاب', path: '/products/category/pc?filter=student' },
-                                    { title: 'کامپیوتر رندرینک', path: '/products/category/pc?filter=rendering' },
+                                    { title: 'كمبيوتر رندرینک', path: '/products/category/pc?filter=rendering' },
                                     { title: 'كمبيوترات مكتبية', path: '/products/category/pc?filter=office' },
                                 ]}
                             />

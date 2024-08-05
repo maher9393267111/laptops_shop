@@ -97,7 +97,7 @@ const TransactionDetails = () => {
 
                                 <div className="text-[13px] flex flex-col gap-4 text-description-text">
 
-                                    <h3 className="text-center font-peyda text-xl text-gold pb-3">اطلاعات سفارش</h3>
+                                    <h3 className="text-center font-peyda text-xl text-gold pb-3">معلومات الطلب</h3>
 
                                     <div className="flex justify-between">
 
@@ -111,7 +111,7 @@ const TransactionDetails = () => {
                                                     :
                                                     transactionData?.status == 'PROCESSING'
                                                         ?
-                                                        'درحال ارسال'
+                                                        'مرحلة الارسال'
                                                         :
                                                         'الغاء شده'
                                             }
@@ -119,18 +119,18 @@ const TransactionDetails = () => {
                                     </div>
 
                                     <div className="flex justify-between">
-                                        <p className="font-peyda text-md">کد سفارش:</p>
+                                        <p className="font-peyda text-md">رمز الطلب :</p>
                                         <p dir="ltr">#{transactionData?._id?.slice(-6, -1).toUpperCase()}</p>
                                     </div>
 
                                     <div className="flex justify-between">
-                                        <p className="font-peyda text-md">وضعیت پرداخت:</p>
+                                        <p className="font-peyda text-md">حالة السداد:</p>
                                         <p>تسویه شده</p>
                                     </div>
 
                                     <div className="flex justify-between">
-                                        <p className="font-peyda text-md">جمع خرید:</p>
-                                        <p> {sumOfProductsWithDiscount?.toLocaleString('fa-IR')} ريال </p>
+                                        <p className="font-peyda text-md">إجمالي المبلغ:</p>
+                                        <p> {sumOfProductsWithDiscount} ريال </p>
                                     </div>
 
                                 </div>
@@ -143,7 +143,7 @@ const TransactionDetails = () => {
                                     </div>
 
                                     <div className="font-bold flex justify-between">
-                                        <p>ادرس: </p>
+                                        <p>العنوان </p>
                                         <p className="font-sans">{'ایران - ' + transactionData?.customerData?.ostan + ' - ' + transactionData?.customerData?.province}</p>
                                     </div>
 
@@ -152,7 +152,7 @@ const TransactionDetails = () => {
                                             ?
                                             <>
                                                 <div className="font-bold flex justify-between">
-                                                    <p>کد پستی: </p>
+                                                    <p> الكود البريدي </p>
                                                     <p className="font-sans">{transactionData?.customerData.codePost}</p>
                                                 </div>
 
@@ -167,7 +167,7 @@ const TransactionDetails = () => {
                                                 </div>
 
                                                 <div className="font-bold flex justify-between">
-                                                    <p>توضیحات: </p>
+                                                    <p>تفاصيل الطلب : </p>
                                                     <p className="font-sans">{transactionData?.customerData?.orderDetails || 'توضیحات یافت نشد'}</p>
                                                 </div>
                                             </>
@@ -175,7 +175,7 @@ const TransactionDetails = () => {
                                     }
 
                                     <div onClick={() => setShowMoreShown(prev => !prev)} className="inline-flex w-1/3 m-auto rounded-md gap-2 text-center justify-center items-center p-1 text-md text-white-red cursor-pointer hover:bg-white-red hover:text-white transition-all">
-                                        <div>مشاهده <span>{showMoreShown ? 'کمتر' : 'بیشتر'}</span></div>
+                                        <div>مشاهده <span>{showMoreShown ? 'اقل' : 'المزيد'}</span></div>
                                         <IoIosArrowDown className={`size-5 ${showMoreShown && 'rotate-180'} transition-all duration-300 `} />
                                     </div>
 
@@ -184,8 +184,8 @@ const TransactionDetails = () => {
                                 <div className="flex flex-col items-center justify-center gap-3 w-full ch:w-full">
 
                                     <div className="flex items-center gap-3 m-auto mt-0 justify-start w-full ch:w-full">
-                                        <Button fn={() => navigate.replace('/profile?menu=orders')} text="مشاهده پروفایل " />
-                                        <Button fn={() => navigate.replace('/')} text="بازگشت به خانه" />
+                                        <Button fn={() => navigate.replace('/profile?menu=orders')} text="الملف الشخصي" />
+                                        <Button fn={() => navigate.replace('/')} text="الرئيسية" />
                                     </div>
 
                                     {
@@ -194,7 +194,8 @@ const TransactionDetails = () => {
                                             <Button
                                                 fn={cancelTransaction}
                                                 Icon={isLoading ? <Loader /> : <></>}
-                                                text={isLoading ? '' : "الغاء سفارش"}
+                                                text={isLoading ? '' : "إلغاء الطلب"}
+
                                                 filled
                                             />
                                             : null
@@ -215,13 +216,13 @@ const TransactionDetails = () => {
                                 <div className="border p-3 border-gray-500 rounded-sm flex justify-between font-peyda">
 
                                     <div className="flex items-center gap-2">
-                                        <p className="text-gold/75">کد سفارش: </p>
+                                        <p className="text-gold/75">رمز الطلب : </p>
                                         <p dir="ltr" className="text-description-text font-bold"> # {transactionData?._id?.slice(-6, -1).toUpperCase()}</p>
                                     </div>
 
                                     <div className="flex items-center gap-2">
                                         <p className="text-gold/75">مجموع: </p>
-                                        <div className="text-description-text font-sans font-bold mt-1"> <span>{sumOfProductsWithDiscount?.toLocaleString('fa-IR')}</span> ريال </div>
+                                        <div className="text-description-text font-sans font-bold mt-1"> <span>{sumOfProductsWithDiscount}</span> ريال </div>
                                     </div>
                                 </div>
 
@@ -265,8 +266,8 @@ const UserOrder = ({ productID, count, services }: TransactionProductsTypes) => 
             </div>
 
             <div className="flex justify-between text-description-text">
-                <div>تعداد:  <span className="text-white-red font-peyda">{count}</span> </div>
-                <div><span className="text-white-red">{totalPriceCalculator(productID?.price, productID?.discount, count, services, true).toLocaleString('fa-IR')}</span> ريال </div>
+                <div>العدد:  <span className="text-white-red font-peyda">{count}</span> </div>
+                <div><span className="text-white-red">{totalPriceCalculator(productID?.price, productID?.discount, count, services, true)}</span> ريال </div>
             </div>
         </div>
     )

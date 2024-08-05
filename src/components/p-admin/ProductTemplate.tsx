@@ -107,7 +107,7 @@ const ProductTemplate = ({ productsUpdater }: { productsUpdater: () => void }) =
     const checkDataFieldsAndCreate = () => {
 
         if (!name.trim().length) return showToast(false, 'اسم المنتج را وارد کنید')
-        if (isNaN(+price!) || !price) return showToast(false, 'قیمتو به درستی وارد کن')
+        if (isNaN(+price!) || !price) return showToast(false, 'السعرو به درستی وارد کن')
         if (isNaN(+discount!) || +discount! > 100 || +discount! < 0) return showToast(false, 'تخفیف عددی بین ۰ و ۱۰۰ است')
         if (selectedCategory == -1) return showToast(false, 'دسته بندی المنتج را انتخاب کنید')
 

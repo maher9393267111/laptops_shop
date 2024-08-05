@@ -45,7 +45,7 @@ const Comments = () => {
             <Layout>
                 <div>
 
-                    <h3 className='md:text-[26px] text-xl font-peyda pt-4 font-bold text-panel-darkBlue'>ادارة التعليقات</h3>
+                    <h3 className='md:text-[26px] text-xl font-peyda pt-4 font-bold text-panel-darkBlue'>ادارة  التعليقات</h3>
 
                     <div className='grid grid-cols-1 pt-4 overflow-auto'>
 

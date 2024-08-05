@@ -50,7 +50,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
 
     const [productComments, setProductComments] = useState<commentProps[]>([])
     const [isUpdating, setIsUpdating] = useState(false)
-    const [productServices, setProductServices] = useState<unknownObjProps<number>>({ 'گارانتی ۱۸ ماهه پیسی کالا': 0 })
+    const [productServices, setProductServices] = useState<unknownObjProps<number>>({ '(ضمان المنتج لمدة 18 شهرًا)': 0 })
     const [currentImage, setCurrentImage] = useState(0)
 
     const { name, price, discount, specs, _id, image, category } = product || {}
@@ -87,7 +87,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
 
             if (data.productID?._id == _id) {
                 setProductCount(data.count)
-                setProductServices({ ...data.services, 'گارانتی ۱۸ ماهه پیسی کالا': 0 })
+                setProductServices({ ...data.services, '(ضمان المنتج لمدة 18 شهرًا)': 0 })
                 return true
             }
             setProductCount(1)
@@ -249,9 +249,9 @@ const Product = ({ product }: { product: productDataTypes }) => {
                         <div className="flex flex-1 items-center justify-between text-[11px]">
 
                             <div className="text-sm">
-                                <span className="font-peyda text-gold text-[15px]">پیشنهاد ویژه</span>
+                                <span className="font-peyda text-gold text-[15px]">عرض خاص</span>
                                 <span className="block"></span>
-                                <span className="text-[10px]">فرصت باقی مانده</span>
+                                <span className="text-[10px]">الوقت المتبقي</span>
                             </div>
 
                             <div className="flex-center gap-2">
@@ -350,12 +350,12 @@ const Product = ({ product }: { product: productDataTypes }) => {
 
                         <div className="flex items-center gap-12 text-[12px]">
 
-                            <p>گارانتی دستگاه</p>
+                            <p>ضمان الجهاز</p>
 
                             <select defaultValue={1}
                                 className="bg-primary-black rounded-md p-2 border border-dark-gold">
-                                <option disabled={true} value={0}>گارانتی دستگاه را انتخاب کنید</option>
-                                <option value={1}>گارانتی 18 ماهه شرکتی</option>
+                                <option disabled={true} value={0}>ضمان الجهاز را انتخاب کنید</option>
+                                <option value={1}>ضمان الجهاز 18 شهر</option>
                             </select>
 
                         </div>
@@ -423,8 +423,9 @@ const Product = ({ product }: { product: productDataTypes }) => {
                         <div>
 
                             <div className="flex items-center gap-3 text-title-text text-2xl xl:mt-10 mt-8">
-                                {discount && <div className="red-line-through text-white ">{price.toLocaleString('fa-IR')}</div>}
-                                <div className="text-blue-white">{totalPriceCalculator(+price, +discount, 1, productServices, true).toLocaleString('fa-IR')}<span className="text-description-text text-xl"> ريال</span></div>
+                                {discount && <div className="red-line-through text-white ">{price}</div>}
+                           
+                                <div className="text-blue-white">{totalPriceCalculator(+price, +discount, 1, productServices, true)}<span className="text-description-text text-xl"> ريال</span></div>
                             </div>
 
                             {
@@ -435,7 +436,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                         <Button
                                             filled
                                             fn={() => navigate.push('/cart')}
-                                            text="موجود در عربة التسوق"
+                                            text="موجود في عربة التسوق"
                                         />
 
                                         <div className="flex h-[44px] items-center border border-dark-gold rounded-md">
@@ -478,7 +479,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
 
                     <div className=" flex-1 text-[12px] hidden lg:block text-white mb-auto">
                         <div className="ch:rounded-sm space-y-1">
-                            <h4 className="bg-[#343539] mb-2 py-1 px-2">مشخصات اصلی المنتج</h4>
+                            <h4 className="bg-[#343539] mb-2 py-1 px-2">تفاصيل المنتج</h4>
                             {
                                 [...productSpecs]
                                     .slice(0, 6)
@@ -547,32 +548,29 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                             <br /><br />
                                             أرسل تعليقاتك بناءً على الخبرة والاستخدام العملي وبعناية إلى النقاط الفنية؛ اذكر الإيجابيات والسلبيات دون المساس بالمنتج المحدد ومن الأفضل تجنب نشر تعليقات متعددة الكلمات.
                                             <br /><br />
-                                            نظرات خود را براساس تجربه و استفاده‌ی عملی و با دقت به نکات فنی ارسال کنید؛
-                                            بدون تعصب به المنتج خاص، مزایا و معایب را بازگو کنید و بهتر است از ارسال
-                                            نظرات چندکلمه‌‌ای خودداری کنید.
+                                            أرسل تعليقاتك بناءً على الخبرة والاستخدام العملي وبعناية إلى النقاط الفنية؛ اذكر الإيجابيات والسلبيات دون المساس بالمنتج المحدد ومن الأفضل تجنب نشر تعليقات متعددة الكلمات.
                                             <br /><br />
-                                            بهتر است در نظرات خود از تمرکز روی عناصر متغیر مثل قیمت، پرهیز کنید.
+                                            من الأفضل تجنب التركيز على العناصر المتغيرة مثل السعر في تعليقاتك.
                                             <br /><br />
-                                            به کاربران و سایر اشخاص احترام بگذارید. پیام‌هایی که شامل محتوای توهین‌آمیز
-                                            و کلمات نامناسب باشند، حذف می‌شوند.
+                                            احترام المستخدمين والأشخاص الآخرين. سيتم حذف الرسائل التي تحتوي على محتوى مسيء وكلمات غير لائقة.
                                         </div>
                                     </div>
 
                                     <div className={`flex-1 mb-auto w-full`}>
 
                                         {
-                                            productComments?.length ? null : <p className="text-description-text pt-2">اولین کسی باشید که دیدگاهی می نویسد “{name}”</p>
+                                            productComments?.length ? null : <p className="text-description-text pt-2">كن اول من يكتب تعليق“{name}”</p>
                                         }
 
                                         {
                                             !isLogin ?
-                                                <div className="text-center mt-12 p-3 border border-dark-gold rounded-md w-3/4 m-auto">برای ثبت نظر ابتدا <Link href="/login" className="text-blue-dark">وارد حساب </Link>خود شوید.</div>
+                                                <div className="text-center mt-12 p-3 border border-dark-gold rounded-md w-3/4 m-auto">برای نشر التعليق ابتدا <Link href="/login" className="text-blue-dark">وارد حساب </Link>خود شوید.</div>
                                                 :
                                                 <div className="mt-6 w-full">
 
                                                     <div className="flex items-center justify-between ch:flex-1 w-full">
 
-                                                        <label htmlFor="textArea">دیدگاه شما <span className="text-white-red">*</span></label>
+                                                        <label htmlFor="textArea">وجهة نظرك<span className="text-white-red">*</span></label>
 
                                                         <div className="flex items-center gap-1 justify-evenly">
                                                             <div>نتيجة شما:</div>
@@ -589,7 +587,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
 
                                                     <div className="w-full ch:w-full">
                                                         <Button
-                                                            text={isUpdating ? '' : 'ثبت نظر'}
+                                                            text={isUpdating ? '' : 'نشر التعليق'}
                                                             Icon={isUpdating ? <Loader /> : <></>}
                                                             filled
                                                             fn={addNewComment}
@@ -603,12 +601,12 @@ const Product = ({ product }: { product: productDataTypes }) => {
 
                                 <div className="mt-24">
                                     <div className="flex items-center justify-between border-b border-title-text pb-2">
-                                        <p className="font-peyda text-gold text-[15px]">نقد و بررسی ها</p>
+                                        <p className="font-peyda text-gold text-[15px]">التعليقات</p>
                                         <div className="flex items-center text-[11px] gap-4 text-description-text ch:transition-all">
                                             <BsFilterLeft className="size-5" />
                                             <p onClick={() => setSortCommentsBy('newest')} className={`${sortCommentsBy == 'newest' && 'text-white-red'} cursor-pointer`}>جدیدترین</p>
                                             <p onClick={() => setSortCommentsBy('rate')} className={`${sortCommentsBy == 'rate' && 'text-white-red'} cursor-pointer`}>براساس نتيجة</p>
-                                            <p onClick={() => setSortCommentsBy('byCustomer')} className={`${sortCommentsBy == 'byCustomer' && 'text-white-red'} cursor-pointer`}>دیدگاه خریداران</p>
+                                            <p onClick={() => setSortCommentsBy('byCustomer')} className={`${sortCommentsBy == 'byCustomer' && 'text-white-red'} cursor-pointer`}>تعليقات الزبائن</p>
                                         </div>
                                     </div>
 
@@ -621,7 +619,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                                 }
                                             </div>
                                             :
-                                            <div className="w-full mt-3 bg-primary-black px-3 py-4 text-[14px] rounded-md">نظری برای این المنتج ثبت نشده !</div>
+                                            <div className="w-full mt-3 bg-primary-black px-3 py-4 text-[14px] rounded-md">لا توجد تعليقات لهذا المنتج!</div>
                                     }
                                 </div>
                             </div>
@@ -629,7 +627,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                             <div>
                                 <div className="flex items-center text-md gap-2">
                                     <BiMessageSquareDetail className="size-6" />
-                                    <p>مشخصات کلی</p>
+                                    <p>المواصفات العامة</p>
                                 </div>
 
                                 <div className="space-y-1 mt-4 text-white text-[10px]">

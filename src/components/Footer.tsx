@@ -17,14 +17,18 @@ function Footer() {
 
                 <div>
                     <CiLocationOn className="size-5 shrink-0 text-title-text" />
-                    <p>تهران، خیابان ولیعصر (عج)، تقاطع ولیعصر و طالقانی مجتمع تجاری اداری نور تهران طبقه همکف دوم پلاک 7010، فروشگاه کامپیوتر و لپ تاپ پی سی کالا </p>
+                    <p>طريق السلام، طيبة، المدينة المنورة 42353، المملكة العربية السعودية </p>
                 </div>
 
                 <div className="pb-6">
                     <MdOutlinePhoneAndroid className="size-5 text-title-text shrink-0" />
-                    <p>تماس : <span className="text-blue-white px-1">۰۲۱۸۸۹۴۱۳۸۹</span> - <span className="text-blue-white px-1">۰۲۱۸۸۹۴۱۴۴۰</span> - <span className="text-blue-white px-1">۰۲۱۸۸۹۴۱۴۶۵</span>
-                        <span className="pipe-sep relative mx-2"></span> ساعات پاسخگویی: ساعت ۱۰ الی ۱۹
-                        <span className="pipe-sep relative mx-2"></span>تهران، میدان ولیعصر، خیابان ولیعصر،خیابان ولدی (انبار مرکزی)</p>
+                    <p> معلومات التواصل : <span className="text-blue-white px-1">۰2222222</span> - <span className="text-blue-white px-1">011111111</span> - <span className="text-blue-white px-1">033333333</span>
+                        <span className="pipe-sep relative mx-2"></span>ساعات العمل: ساعت ۱۰ الی ۱۹
+
+                        {/* <span className="pipe-sep relative mx-2"></span>تهران، میدان ولیعصر، خیابان ولیعصر،خیابان ولدی (انبار مرکزی) */}
+                        
+                        
+                        </p>
                 </div>
 
                 <span className="w-full h-[1px] bg-gold/10"></span>
@@ -42,9 +46,9 @@ function Footer() {
 
                         <div className="flex items-center flex-col sm:flex-row gap-6 justify-center sm:justify-between mt-2">
                             <div className="flex items-center gap-3 ch:ch:size-4 ch:rounded-md ch:p-4 ch:bg-primary-black">
-                                <Button fn={() => location.href = "https://t.me/0oErfan"} Icon={<FaTelegramPlane />} />
-                                <Button fn={() => location.href = "https://github.com/0xErfan"} Icon={<FaGithub />} />
-                                <Button fn={() => location.href = "https://www.instagram.com/libaogs.so"} Icon={<FaInstagram />} />
+                                <Button fn={() => location.href = "https://t.me"} Icon={<FaTelegramPlane />} />
+                                {/* <Button fn={() => location.href = "https://github.com/0xErfan"} Icon={<FaGithub />} /> */}
+                                <Button fn={() => location.href = "https://www.instagram.com"} Icon={<FaInstagram />} />
                             </div>
                             <div className="flex items-center gap-1 text-blue-white">
                                 <VscSymbolRuler className="size-5" />
@@ -54,13 +58,13 @@ function Footer() {
 
                     </div>
 
-                    <div className="flex-1 h-full mr-auto mt-8 relative"><span className="fake-namad">Fake</span><Image width={1000} loading="lazy" height={1000} quality={100} className="h-[100%] mt-auto" src={`${prefix}/images/namads.png`} alt="" /></div>
+                    {/* <div className="flex-1 h-full mr-auto mt-8 relative"><span className="fake-namad">Fake</span><Image width={1000} loading="lazy" height={1000} quality={100} className="h-[100%] mt-auto" src={`${prefix}/images/namads.png`} alt="" /></div> */}
 
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 bg-[#1F1F1F]">
                     <div className="container sm:flex-row flex flex-col text-center sm:text-start items-center justify-between text-[15px] py-3">
-                        <p>Created with ❤️ by <a className="underline text-blue-white" target="_blank" href="https://github.com/0xErfan">0xErfan</a></p>
+                        <p>Created with ❤️ by <a className="underline text-blue-white" target="_blank" href="">ٍSENIOR WEB</a></p>
                         <p>All Right Reserved ©2024</p>
                     </div>
                 </div>

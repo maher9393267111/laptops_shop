@@ -137,7 +137,7 @@ const SideMenu = ({ dataToShow, changeTypeFn }: SideMenuProps) => {
 
                                 <div className='h-full flex flex-col my-8 gap-3'>
                                     <div className='flex items-center justify-between border-y border-dark-gold py-3'>
-                                        <p>جمع جزء:</p>
+                                        <p>السعر الكلي:</p>
                                         <p><span className='text-white-red text-[16px] font-bold'>{sumOfProductsPrice.toLocaleString('fa-IR')}</span> ريال</p>
                                     </div>
                                     <div className='flex items-center justify-between ch:grow gap-2'>
@@ -168,7 +168,7 @@ const SideMenu = ({ dataToShow, changeTypeFn }: SideMenuProps) => {
                             </div>
 
                             <div className="flex items-center bg-secondary-black text-white gap-2 ch:ml-auto pt-2 mx-3 p-2 border-b border-red-800 overflow-hidden rounded-md">
-                                <input ref={searchTextRef} onKeyDown={e => e.key == 'Enter' && globalSearch()} className=" bg-transparent w-full text-sm " type="text" placeholder="المنتج خود را بیابید..." />
+                                <input ref={searchTextRef} onKeyDown={e => e.key == 'Enter' && globalSearch()} className=" bg-transparent w-full text-sm " type="text" placeholder="البحث عن منتج" />
                                 <IoSearch onClick={globalSearch} className='size-7 cursor-pointer' />
                             </div>
 
@@ -177,16 +177,16 @@ const SideMenu = ({ dataToShow, changeTypeFn }: SideMenuProps) => {
                             <div className="text-white">
                                 <ul className="flex items-start px-5 flex-col gap-4 mt-5 text-[14px]">
                                     <Category
-                                        key={'کامپیوتر'}
-                                        title="کامپیوتر" screen="small"
+                                        key={'كمبيوتر'}
+                                        title="كمبيوتر" screen="small"
                                         Icon={<FaComputer className="size-5" />}
                                         submenus={[
                                             { title: 'كمبيوترات العاب', path: '/products/category/pc?filter=gaming' },
                                             { title: 'كمبيوترات  اقتصادية', path: '/products/category/pc?filter=affordable' },
                                             { title: 'كمبيوترات طلاب', path: '/products/category/pc?filter=student' },
-                                            { title: 'کامپیوتر رندرینک', path: '/products/category/pc?filter=rendering' },
+                                            { title: 'كمبيوتر رندرینک', path: '/products/category/pc?filter=rendering' },
                                             { title: 'كمبيوترات مكتبية', path: '/products/category/pc?filter=office' },
-                                            { title: 'همه کامپیوتر ها', path: '/products/category/pc ' },
+                                            { title: 'همه كمبيوتر ها', path: '/products/category/pc ' },
                                         ]}
                                     />
                                     <Category

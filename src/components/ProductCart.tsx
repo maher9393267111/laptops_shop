@@ -61,7 +61,7 @@ const ProductCart = ({ price, finalPrice, count, title, src, id }: ProductCartPr
                         <Image width={400} height={400} className="object-cover size-1/2 p-1" alt={title} src={src!} />
 
                         <div className="flex flex-col gap-1">
-                            <div>تعداد: <span className="text-white-red"> {price.toLocaleString('fa-IR')}</span> * {count} ريال </div>
+                            <div>العدد: <span className="text-white-red"> {price.toLocaleString('fa-IR')}</span> * {count} ريال </div>
                             <div>مجموع: <span className="text-white-red">{finalPrice.toLocaleString('fa-IR')}</span> ريال</div>
                         </div>
 

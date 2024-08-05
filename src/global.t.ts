@@ -2,7 +2,7 @@ interface unknownObjProps<T> { [key: string]: T }
 
 type categories = any
 
-// 'pc' | 'laptop' | 'accessory' | 'console' | 'parts' | 'قطع كمبيوتر' | 'الالعاب' | 'لابتوب' | 'اكسسوارات' | 'کامپیوتر'
+// 'pc' | 'laptop' | 'accessory' | 'console' | 'parts' | 'قطع كمبيوتر' | 'الالعاب' | 'لابتوب' | 'اكسسوارات' | 'كمبيوتر'
 
 interface commentProps {
     _id: string

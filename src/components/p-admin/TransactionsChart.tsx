@@ -62,7 +62,7 @@ const TransactionsChart = ({ chartData }: { chartData: TransactionProps[] }) => 
                             width={80}
                             domain={[0, maxValueInChart % 2 == 0 ? maxValueInChart : maxValueInChart + 1]}
                         />
-                        <Tooltip formatter={(value) => [`${value}`, 'تعداد']} />
+                        <Tooltip formatter={(value) => [`${value}`, 'العدد']} />
                         <Area type="monotone" dataKey="uv" stroke="#2D9CDB" fill="#2D9CDB" />
                     </AreaChart>
                 </ResponsiveContainer>

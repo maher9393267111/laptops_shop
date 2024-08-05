@@ -25,9 +25,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             })
         }
 
-        await NotificationModel.create({ userID: updatedTransaction.userID, body: `سفارش شما با کد ${transactionID.slice(-6, -1).toUpperCase()}  با موفقیت الغاء شد 🥲‍` })
+        await NotificationModel.create({ userID: updatedTransaction.userID, body: `طلبك با کد ${transactionID.slice(-6, -1).toUpperCase()}  با موفقیت الغاء شد 🥲‍` })
 
-        return res.status(200).json({ message: `سفارش شما با موفقیت الغاء شد` })
+        return res.status(200).json({ message: `طلبك با موفقیت الغاء شد` })
 
     } catch (err) {
         console.log(err)

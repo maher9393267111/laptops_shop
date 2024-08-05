@@ -147,9 +147,9 @@ const Card = () => {
                                         <thead>
                                             <tr className="bg-primary-black w-full ch:p-5">
                                                 <th className="max-w-full w-full">المنتج</th>
-                                                <th className="min-w-[140px] whitespace-nowrap">قیمت(بدون تخفیف)</th>
-                                                <th className="min-w-[60px]">تعداد</th>
-                                                <th className="min-w-[120px]">جمع کل</th>
+                                                <th className="min-w-[140px] whitespace-nowrap">السعر (بدون خصم)</th>
+                                                <th className="min-w-[60px]">العدد</th>
+                                                <th className="min-w-[120px]">المجموع</th>
                                             </tr>
                                         </thead>
                                         : <div className="text-center w-full text-white-red font-peyda text-[16px]">عربة التسوق خالی است</div>
@@ -182,7 +182,7 @@ const Card = () => {
                                     ?
                                     <div className="mt-20 border relative border-title-text rounded-md p-3">
 
-                                        <span className="absolute w-20 h-4 p-3 bg-primary-black top-0 right-[30px] rounded-sm flex-center -translate-y-[50%]">کد تخفیف:</span>
+                                        <span className="absolute w-20 h-4 p-3 bg-primary-black top-0 right-[30px] rounded-sm flex-center -translate-y-[50%]">رمز كوبون الخصم</span>
 
                                         <div className="mt-5 flex items-center justify-between rounded-sm bg-primary-black border border-white/10">
 
@@ -191,7 +191,7 @@ const Card = () => {
                                                 value={discountInput}
                                                 onChange={e => isDiscountValid ? null : setDiscountInput(e.target.value)}
                                                 onKeyDown={e => e.key == 'Enter' && checkAndActiveDiscount()}
-                                                placeholder="کد تخفیف:"
+                                                placeholder="رمز كوبون الخصم"
                                                 spellCheck={false}
                                                 type="text"
                                             />
@@ -202,7 +202,7 @@ const Card = () => {
                                                     bgColor={isDiscountValid ? "bg-green" : undefined}
                                                     active={isDiscountValid}
                                                     Icon={isLoading ? <Loader /> : <></>}
-                                                    text={isLoading ? '' : isDiscountValid ? 'کد تخفیف اعمال شده' : 'اعمال کد تخفیف'}
+                                                    text={isLoading ? '' : isDiscountValid ? 'کد تخفیف اعمال شده' : 'تطبيق رمز الكوبون'}
                                                     fn={checkAndActiveDiscount}
                                                 />
                                                 {
@@ -225,23 +225,23 @@ const Card = () => {
                         <div className="flex-1 w-full mb-auto border border-gold/30">
                             <div className="flex items-center gap-2 text-[14px] font-peyda text-gold">
                                 <div className="size-3 p-1 rounded-full bg-gold"></div>
-                                <div>جمع کل عربة التسوق</div>
+                                <div>المجموع عربة التسوق</div>
                             </div>
 
                             <div className="flex gap-3 text-[12px] flex-col my-6">
                                 <div className="flex items-center justify-between text-title-text">
-                                    <p>جمع جزء</p>
+                                    <p>السعر الكلي</p>
                                     <p><span className="text-white-red text-[15px]">{sumOfProductsWithoutDiscount.toLocaleString('fa-IR')}</span> ريال</p>
                                 </div>
 
                                 <div className="flex items-center justify-between text-title-text">
-                                    <p>مجموع</p>
+                                    <p> السعر بعد التخفيض</p>
                                     <p><span className="text-white-red text-[15px]">{sumOfProductsWithDiscount.toLocaleString('fa-IR')}</span> ريال</p>
                                 </div>
 
                                 <div className="flex items-center justify-between text-title-text">
-                                    <p>جمع تخفیف ها</p>
-                                    <p className="bg-blue-white p-1 rounded-xl text-[14px] text-white rounded-tl-none"><span>{(sumOfProductsWithoutDiscount - sumOfProductsWithDiscount).toLocaleString('fa-IR')}</span> ريال</p>
+                                    <p> فرق السعر</p>
+                                    <p className="bg-blue-white p-1 rounded-xl text-[14px] text-white rounded-tl-none"><span>{(sumOfProductsWithoutDiscount - sumOfProductsWithDiscount).toLocaleString('En')}</span> ريال</p>
                                 </div>
                             </div>
 
