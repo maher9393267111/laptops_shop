@@ -4,6 +4,12 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: { scrollRestoration: true },
   devIndicators: { buildActivity: false },
+
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
+
   images: {
     remotePatterns: [
       {

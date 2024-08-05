@@ -24,7 +24,7 @@ const BreadCrumb = ({ path }: BreadCrumbProps) => {
 
     return (
         <div className="bg-secondary-black text-nowrap rounded-md gap-2 overflow-auto container p-2 flex items-center mb-4 md:mt-[150px] mt-[120px] text-[12px] ch:ch:size-4 text-description-text">
-            <Link href="/" className="flex items-center gap-2">خانه‌<FaAngleLeft /></Link>
+            <Link href="/" className="flex items-center gap-2">الرئيسية<FaAngleLeft /></Link>
             {pathElements}
         </div>
     )

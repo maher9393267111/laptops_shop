@@ -31,7 +31,7 @@ const Category = ({ product, allProductsCount }: Props) => {
     const [allOfProductsLoaded, setAllOfProductsLoaded] = useState(false)
 
     const breadCrumbData = [
-        { text: "دسته بندی ها", link: `/products/category/${category}` },
+        { text: "الاقسام", link: `/products/category/${category}` },
         { text: `${engCategoryToPersian((router.query?.slug?.length ? router.query?.slug[0] : 'accessory') as categories)}` }
     ]
 
