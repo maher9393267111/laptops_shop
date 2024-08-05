@@ -4,7 +4,7 @@ import globalVarsSlice from "./Features/globalVarsSlice"
 
 export const store = configureStore({
     reducer: { userSlice, globalVarsSlice },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false })
+    // middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false })
 })
 
 export type RootState = ReturnType<typeof store.getState>
