@@ -9,8 +9,14 @@ const userSlice = createSlice({
             ...state,
             data: action.payload.userData,
             isLogin: action.payload.isLogin,
-            relatedData: action.payload.userRelatedData
-        }),
+            relatedData: action.payload.userRelatedData,
+            
+        }
+    
+
+    
+    )
+        ,
     },
 })
 
