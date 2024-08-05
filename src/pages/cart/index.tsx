@@ -134,7 +134,7 @@ const Card = () => {
                                                 src={productID?.image?.length ? productID?.image[0] : '/images/imageNotFound.webp'}
                                             />
                                         })
-                                        : <div className="text-center w-full text-white-red font-peyda text-[16px]">سبد خرید خالی است</div>
+                                        : <div className="text-center w-full text-white-red font-peyda text-[16px]">عربة التسوق خالی است</div>
                                 }
                             </div>
 
@@ -152,7 +152,7 @@ const Card = () => {
                                                 <th className="min-w-[120px]">جمع کل</th>
                                             </tr>
                                         </thead>
-                                        : <div className="text-center w-full text-white-red font-peyda text-[16px]">سبد خرید خالی است</div>
+                                        : <div className="text-center w-full text-white-red font-peyda text-[16px]">عربة التسوق خالی است</div>
                                 }
 
                                 <tbody>
@@ -225,23 +225,23 @@ const Card = () => {
                         <div className="flex-1 w-full mb-auto border border-gold/30">
                             <div className="flex items-center gap-2 text-[14px] font-peyda text-gold">
                                 <div className="size-3 p-1 rounded-full bg-gold"></div>
-                                <div>جمع کل سبد خرید</div>
+                                <div>جمع کل عربة التسوق</div>
                             </div>
 
                             <div className="flex gap-3 text-[12px] flex-col my-6">
                                 <div className="flex items-center justify-between text-title-text">
                                     <p>جمع جزء</p>
-                                    <p><span className="text-white-red text-[15px]">{sumOfProductsWithoutDiscount.toLocaleString('fa-IR')}</span> تومان</p>
+                                    <p><span className="text-white-red text-[15px]">{sumOfProductsWithoutDiscount.toLocaleString('fa-IR')}</span> ريال</p>
                                 </div>
 
                                 <div className="flex items-center justify-between text-title-text">
                                     <p>مجموع</p>
-                                    <p><span className="text-white-red text-[15px]">{sumOfProductsWithDiscount.toLocaleString('fa-IR')}</span> تومان</p>
+                                    <p><span className="text-white-red text-[15px]">{sumOfProductsWithDiscount.toLocaleString('fa-IR')}</span> ريال</p>
                                 </div>
 
                                 <div className="flex items-center justify-between text-title-text">
                                     <p>جمع تخفیف ها</p>
-                                    <p className="bg-blue-white p-1 rounded-xl text-[14px] text-white rounded-tl-none"><span>{(sumOfProductsWithoutDiscount - sumOfProductsWithDiscount).toLocaleString('fa-IR')}</span> تومان</p>
+                                    <p className="bg-blue-white p-1 rounded-xl text-[14px] text-white rounded-tl-none"><span>{(sumOfProductsWithoutDiscount - sumOfProductsWithDiscount).toLocaleString('fa-IR')}</span> ريال</p>
                                 </div>
                             </div>
 

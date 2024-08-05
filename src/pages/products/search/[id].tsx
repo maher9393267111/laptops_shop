@@ -338,7 +338,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
 
                         </div>
 
-                        <div className="bg-green flex-1 rounded-md p-4 text-sm text-center">قدرت ما در أفضل سعر بازار است بهترین عرضه کننده لپ تاپ در ایران</div>
+                        <div className="bg-green flex-1 rounded-md p-4 text-sm text-center">قوتنا تكمن في أفضل سعر في السوق وأفضل مورد لأجهزة الكمبيوتر المحمول</div>
 
                     </div>
 
@@ -369,7 +369,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                     : null
                             }
 
-                            <p className="text-dark-red mt-6 text-sm">خدمات ویژه پی سی کالا :</p>
+                            <p className="text-dark-red mt-6 text-sm">خدمات خاصة لسلع الكمبيوتر:</p>
 
                             <div className="text-[12px] ch:my-3 ch:text-description-text">
 
@@ -381,7 +381,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                         type="checkbox"
                                         className={`${isUpdating && 'cursor-wait'}`}
                                     />
-                                    <label htmlFor="insurance">گارانتی طلایی پی سی کالا (پس انداز اندک برای حسرت های ناگهانی) <span className="text-blue-white mx-1">1,500,000 تومان</span></label>
+                                    <label htmlFor="insurance">ضمان  الذهبي (توفيرات صغيرة للندم المفاجئ) <span className="text-blue-white mx-1">1,500,000 ريال</span></label>
                                 </div>
 
                                 <div className="flex items-center gap-1">
@@ -392,7 +392,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                         type="checkbox"
                                         className={`${isUpdating && 'cursor-wait'}`}
                                     />
-                                    <label htmlFor="windows">نصب ویندوز حرفه ای کار هرکسی نیست ، تیکو بزن . <span className="text-blue-white mx-1">500,000 تومان</span> </label>
+                                    <label htmlFor="windows">تثبيت Windows الاحترافي ليس متاحًا للجميع . <span className="text-blue-white mx-1">500,000 ريال</span> </label>
                                 </div>
 
                                 <div className="flex items-center gap-1">
@@ -403,7 +403,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                         type="checkbox"
                                         className={`${isUpdating && 'cursor-wait'}`}
                                     />
-                                    <label htmlFor="windows-org">ویندوز اورجینال (لایسنس 1 ساله)<span className="text-blue-white mx-1">2,500,000 تومان</span> </label>
+                                    <label htmlFor="windows-org">ويندوز الأصلي (ترخيص لمدة سنة واحدة)<span className="text-blue-white mx-1">2,500,000 ريال</span> </label>
                                 </div>
 
                                 <div className="flex items-center gap-1">
@@ -414,7 +414,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                         type="checkbox"
                                         className={`${isUpdating && 'cursor-wait'}`}
                                     />
-                                    <label htmlFor="anti-virus"> نصب آنتی ویروس<span className="text-blue-white mx-1">150,000 تومان</span></label>
+                                    <label htmlFor="anti-virus"> تثبيت برامج مكافحة الفيروسات<span className="text-blue-white mx-1">150,000 ريال</span></label>
                                 </div>
 
                             </div>
@@ -424,7 +424,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
 
                             <div className="flex items-center gap-3 text-title-text text-2xl xl:mt-10 mt-8">
                                 {discount && <div className="red-line-through text-white ">{price.toLocaleString('fa-IR')}</div>}
-                                <div className="text-blue-white">{totalPriceCalculator(+price, +discount, 1, productServices, true).toLocaleString('fa-IR')}<span className="text-description-text text-xl"> تومان</span></div>
+                                <div className="text-blue-white">{totalPriceCalculator(+price, +discount, 1, productServices, true).toLocaleString('fa-IR')}<span className="text-description-text text-xl"> ريال</span></div>
                             </div>
 
                             {
@@ -435,7 +435,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                         <Button
                                             filled
                                             fn={() => navigate.push('/cart')}
-                                            text="موجود در سبد خرید"
+                                            text="موجود در عربة التسوق"
                                         />
 
                                         <div className="flex h-[44px] items-center border border-dark-gold rounded-md">
@@ -464,7 +464,7 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                         </div>
 
                                         <Button
-                                            text="افزودن به سبد خرید"
+                                            text="أضف إلى السلة"
                                             fn={() => { isLogin ? addProductToBasket(data._id, _id, productCount, dispatch, productServices) : showToast(false, 'ابتدا وارد حساب خود شوید') }}
                                             Icon={<MdAddShoppingCart />}
                                             filled
@@ -488,18 +488,18 @@ const Product = ({ product }: { product: productDataTypes }) => {
 
                         <div className="mt-5">
 
-                            <div className="p-3 text-center rounded-sm cursor-pointer bg-dark-red text-[13px]">نحوه خرید اقساطی</div>
+                            <div className="p-3 text-center rounded-sm cursor-pointer bg-dark-red text-[13px]">كيفية الشراء بالتقسيط</div>
 
                             <div className="flex items-center gap-2 mt-2 ch:rounded-sm ch:cursor-pointer">
 
                                 <div
                                     className="flex items-center flex-1 flex-center font-bold gap-2 p-2 bg-secondary-black text-title-text border-dashed hover:bg-blue-dark transition-all border border-blue-dark">
-                                    <MdOutlinePhoneEnabled className="size-5" />نیاز به مشاوره
+                                    <MdOutlinePhoneEnabled className="size-5" />تواصل معنا
                                 </div>
 
                                 <div
                                     className="flex items-center flex-1 flex-center font-bold gap-2 p-2 text-secondary-black bg-title-text">
-                                    <GrGroup className="size-5 text-tex" />امور مشتریان
+                                    <GrGroup className="size-5 text-tex" />خدمة الزبائن
                                 </div>
                             </div>
                         </div>
@@ -513,14 +513,14 @@ const Product = ({ product }: { product: productDataTypes }) => {
                     <div onClick={() => setActiveSection("details")} className={`flex-1 relative`}>
                         <div className={`flex-center flex-col ${activeSection == "details" && "active-section"} gap-1`}>
                             <TbListDetails className="text-description-text size-6" />
-                            <p>مشخصات فیزیکی</p>
+                            <p>المواصفات</p>
                         </div>
                     </div>
 
                     <div onClick={() => setActiveSection("comments")} className={`flex-1 relative`}>
                         <div className={`flex-center flex-col ${activeSection == "comments" && "active-section"} gap-1`}>
                             <GoCommentDiscussion className="text-description-text size-6" />
-                            <p>نظرات کاربران</p>
+                            <p>تعليقات المستخدم</p>
                         </div>
                     </div>
                     {(productComments?.length && activeSection == 'comments') ? <span className="absolute bg-secondary-black aspect-square size-8 rounded-md left-5 top-[25px] flex-center text-center pt-2 text-gold shadow-md text-[16px] p-1">{productComments?.length}</span> : null}
@@ -539,15 +539,13 @@ const Product = ({ product }: { product: productDataTypes }) => {
                                     <div className={`flex-1 space-y-3`}>
                                         <div className="flex items-center gap-2">
                                             <MdOutlineInsertComment className="size-8" />
-                                            <h3>نظرات کاربران</h3>
+                                            <h3>تعليقات المستخدم</h3>
                                         </div>
                                         <div
                                             className="border text-description-text rounded-md border-dotted border-gold/30 p-4">
-                                            <span className="text-white">                        لطفا پیش از ارسال نظر، خلاصه قوانین زیر را مطالعه کنید:</span>
+                                            <span className="text-white">                        يرجى قراءة ملخص القواعد التالية قبل نشر التعليق:</span>
                                             <br /><br />
-                                            فارسی بنویسید و از کیبورد فارسی استفاده کنید. بهتر است از فضای خالی (Space)
-                                            بیش‌از‌حدِ معمول، شکلک یا ایموجی استفاده نکنید و از کشیدن حروف یا کلمات با
-                                            صفحه‌کلید بپرهیزید.
+                                            أرسل تعليقاتك بناءً على الخبرة والاستخدام العملي وبعناية إلى النقاط الفنية؛ اذكر الإيجابيات والسلبيات دون المساس بالمنتج المحدد ومن الأفضل تجنب نشر تعليقات متعددة الكلمات.
                                             <br /><br />
                                             نظرات خود را براساس تجربه و استفاده‌ی عملی و با دقت به نکات فنی ارسال کنید؛
                                             بدون تعصب به المنتج خاص، مزایا و معایب را بازگو کنید و بهتر است از ارسال

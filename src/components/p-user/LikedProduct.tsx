@@ -34,7 +34,7 @@ const LikedProduct = ({ productID, creator }: likeProductProps) => {
 
             <div className="flex items-center gap-3 justify-center text-title-text text-sm">
                 {discount && <div className="red-line-through text-white ">{price.toLocaleString('fa-IR')}</div>}
-                <div className="text-blue-white">{priceAfterDiscount.toLocaleString('fa-IR')} <span className="text-[10px] text-title-text">تومان</span></div>
+                <div className="text-blue-white">{priceAfterDiscount.toLocaleString('fa-IR')} <span className="text-[10px] text-title-text">ريال</span></div>
             </div>
 
             <Link href={`/products/search/${_id}`} className="text-center min-h-[50px] h-full px-3 transition-all line-clamp-2 hover:text-blue-dark duration-300 cursor-pointer text-title-text break-all leading-[25px] my-4 ">{name}</Link>

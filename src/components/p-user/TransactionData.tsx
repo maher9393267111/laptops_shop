@@ -17,7 +17,7 @@ const Transaction = ({ _id, createdAt, status, productsList, totalPrice }: Trans
             <td>{productsList.reduce((previous, next) => previous + next.count, 0)}</td>
 
             <td>
-                <div className="break-words flex items-center gap-2 max-w-[65px]">{totalPrice.toLocaleString('fa-IR')} <span className="sm:block hidden">تومان</span> </div>
+                <div className="break-words flex items-center gap-2 max-w-[65px]">{totalPrice.toLocaleString('fa-IR')} <span className="sm:block hidden">ريال</span> </div>
             </td>
 
             <td>

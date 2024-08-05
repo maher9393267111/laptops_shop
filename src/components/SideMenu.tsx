@@ -89,7 +89,7 @@ const SideMenu = ({ dataToShow, changeTypeFn }: SideMenuProps) => {
                             <div className='text-description-text w-[265px]'>
 
                                 <div className='flex items-center justify-between text-2xl border-b border-secondary-black text-[14px] pb-4 px-4 mt-4 mb-6 gap-3'>
-                                    <div className='flex-[7] justify-end pt-2'><div>سبد خرید <span className='px-2 bg-black rounded-md'>{relatedData?.BasketItem?.length ?? 0}</span></div></div>
+                                    <div className='flex-[7] justify-end pt-2'><div>عربة التسوق <span className='px-2 bg-black rounded-md'>{relatedData?.BasketItem?.length ?? 0}</span></div></div>
                                     <IoClose onClick={menuCloseHandler} className='cursor-pointer p-[3px] text-dark-red h-full bg-secondary-black rounded-full flex-1' />
                                 </div>
 
@@ -121,7 +121,7 @@ const SideMenu = ({ dataToShow, changeTypeFn }: SideMenuProps) => {
                                                         <Link href={`/products/search/${productID?._id}`} className='line-clamp-3 transition-all duration-300 hover:text-white-red'>{productID?.name}</Link>
 
                                                         <p className='text-[15px] p-1 text-title-text'>{count} × <span className='text-white-red'>
-                                                            {totalPriceCalculator(productID?.price, productID?.discount, 1, services).toLocaleString('fa-IR')}</span> تومان
+                                                            {totalPriceCalculator(productID?.price, productID?.discount, 1, services).toLocaleString('fa-IR')}</span> ريال
                                                         </p>
                                                     </div>
 
@@ -130,7 +130,7 @@ const SideMenu = ({ dataToShow, changeTypeFn }: SideMenuProps) => {
                                             :
                                             <div className='flex flex-col justify-center text-[13px] bg-secondary-black rounded-md text-title-text p-3 my-4 items-center gap-3'>
                                                 <BiBasket className='size-8 text-description-text' />
-                                                <p>هیچ المنتجی در سبد خرید نیست</p>
+                                                <p>هیچ المنتجی در عربة التسوق نیست</p>
                                             </div>
                                     }
                                 </div>
@@ -138,11 +138,11 @@ const SideMenu = ({ dataToShow, changeTypeFn }: SideMenuProps) => {
                                 <div className='h-full flex flex-col my-8 gap-3'>
                                     <div className='flex items-center justify-between border-y border-dark-gold py-3'>
                                         <p>جمع جزء:</p>
-                                        <p><span className='text-white-red text-[16px] font-bold'>{sumOfProductsPrice.toLocaleString('fa-IR')}</span> تومان</p>
+                                        <p><span className='text-white-red text-[16px] font-bold'>{sumOfProductsPrice.toLocaleString('fa-IR')}</span> ريال</p>
                                     </div>
                                     <div className='flex items-center justify-between ch:grow gap-2'>
                                         <Button fn={() => relatedData?.BasketItem?.length ? navigate.push('/checkout') : showToast(false, 'المنتجی برای تسویه وجود نداره ها')} filled text='تسویه حساب' />
-                                        <Button fn={() => navigate.push('/cart')} filled text='مشاهده سبد خرید' />
+                                        <Button fn={() => navigate.push('/cart')} filled text='مشاهده عربة التسوق' />
                                     </div>
                                 </div>
                             </div>

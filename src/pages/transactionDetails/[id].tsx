@@ -130,7 +130,7 @@ const TransactionDetails = () => {
 
                                     <div className="flex justify-between">
                                         <p className="font-peyda text-md">جمع خرید:</p>
-                                        <p> {sumOfProductsWithDiscount?.toLocaleString('fa-IR')} تومان </p>
+                                        <p> {sumOfProductsWithDiscount?.toLocaleString('fa-IR')} ريال </p>
                                     </div>
 
                                 </div>
@@ -221,7 +221,7 @@ const TransactionDetails = () => {
 
                                     <div className="flex items-center gap-2">
                                         <p className="text-gold/75">مجموع: </p>
-                                        <div className="text-description-text font-sans font-bold mt-1"> <span>{sumOfProductsWithDiscount?.toLocaleString('fa-IR')}</span> تومان </div>
+                                        <div className="text-description-text font-sans font-bold mt-1"> <span>{sumOfProductsWithDiscount?.toLocaleString('fa-IR')}</span> ريال </div>
                                     </div>
                                 </div>
 
@@ -266,7 +266,7 @@ const UserOrder = ({ productID, count, services }: TransactionProductsTypes) => 
 
             <div className="flex justify-between text-description-text">
                 <div>تعداد:  <span className="text-white-red font-peyda">{count}</span> </div>
-                <div><span className="text-white-red">{totalPriceCalculator(productID?.price, productID?.discount, count, services, true).toLocaleString('fa-IR')}</span> تومان </div>
+                <div><span className="text-white-red">{totalPriceCalculator(productID?.price, productID?.discount, count, services, true).toLocaleString('fa-IR')}</span> ريال </div>
             </div>
         </div>
     )

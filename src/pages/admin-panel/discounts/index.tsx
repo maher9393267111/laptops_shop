@@ -35,7 +35,7 @@ const DiscountCodes = () => {
 
         dispatch(modalDataUpdater({
             isShown: true,
-            message: `آیا از ایجاد کد تخفیف با کد ${code} و با ارزش ${Number(value).toLocaleString('fa-IR') + ' تومان'} با الاستخدام الأقصى ${maxUse} مطمان هستید؟`,
+            message: `آیا از ایجاد کد تخفیف با کد ${code} و با ارزش ${Number(value).toLocaleString('fa-IR') + ' ريال'} با الاستخدام الأقصى ${maxUse} مطمان هستید؟`,
             status: false,
             title: 'إضافة رمز الخصم جدید',
 

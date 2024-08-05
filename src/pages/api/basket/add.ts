@@ -23,7 +23,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         await BasketItemModel.create({ productID, userID, count: count ?? 1, services })
 
-        return res.status(201).json({ message: 'المنتج به سبد خرید اضافه شد' })
+        return res.status(201).json({ message: 'تم اضافة المنتج بنجاح الى عربة التسوق' })
 
     } catch (err) {
         console.log(err)

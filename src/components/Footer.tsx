@@ -35,10 +35,10 @@ function Footer() {
 
                         <div className="flex-[2] flex items-center text-white gap-2">
                             <BsInfoLg className="size-6 bg-dark-red p-1 rounded-full" />
-                            <p>درباره فروشگاه پی سی کالا</p>
+                            <p>نبذة عن متجر الكمبيوتر</p>
                         </div>
 
-                        <p className="thin-title">فروشگاه پی سی کالا وابسته به گروه مهندسی لعل فام با بیش از ۱۵ سال سابقه فعالیت در زمینه اكسسوارات و حوزه دیجیتال برآن شده است تا برای سهولت حال مشتریان عزیز براساس فعالیت های آنها و میزان کارایی هر سیستم متناسب با فعالیت؛ قطعات را به صورت بهینه شده اسمبل کرده و در اختیار مشتریان عزیز قرار دهد. تا آنها برای خرید یک سیستم کامل و مناسب با فعالیت کاریشان دچار مشکل نباشند و در اسرع وقت به خواسته خود برسند. تمام تلاش ما رضایت شما و سهولت خرید یک سیستم مطمئن می باشد.</p>
+                        <p className="thin-title">متجر PC Kala تابع لمجموعة Lal Pham الهندسية التي تتمتع بخبرة تزيد عن 15 عامًا في مجال الإكسسوارات والمجال الرقمي، وذلك لتسهيل الأمر على عملائنا الأعزاء بناءً على أنشطتهم ومستوى كفاءة كل نظام وفقًا إلى النشاط؛ تجميع الأجزاء بطريقة مثالية وتقديمها للعملاء الأعزاء. حتى لا يواجهوا أي مشاكل في شراء نظام كامل ومناسب لعملهم والحصول على ما يريدون في أسرع وقت ممكن. كل جهودنا هي رضاكم وسهولة شراء نظام موثوق.</p>
 
                         <div className="flex items-center flex-col sm:flex-row gap-6 justify-center sm:justify-between mt-2">
                             <div className="flex items-center gap-3 ch:ch:size-4 ch:rounded-md ch:p-4 ch:bg-primary-black">
@@ -48,7 +48,7 @@ function Footer() {
                             </div>
                             <div className="flex items-center gap-1 text-blue-white">
                                 <VscSymbolRuler className="size-5" />
-                                <p>قوانین و مقررات</p>
+                                <p>الأحكام والشروط</p>
                             </div>
                         </div>
 

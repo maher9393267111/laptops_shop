@@ -91,7 +91,7 @@ const Checkout = () => {
         if (formData.lName.trim().length > 20 || formData.lName.trim().length < 3) return showToast(false, 'نام خانوادگی باید بیشتر از 3 و کمتر از 20 کاراکتر باشد')
         if (isNaN(+formData.codePost) || formData.codePost.trim().length != 10) return showToast(false, 'کد پستی یک عدد ده رقمی است')
         if (!/^09\d{9}$/.test(formData.phoneNum)) return showToast(false, 'رقم الهاتف معتبر نیست')
-        if (!doesUserAccept) return showToast(false, 'موافقت با قوانین و مقررات الزامی است')
+        if (!doesUserAccept) return showToast(false, 'موافقت با الأحكام والشروط الزامی است')
 
         setIsLoading(true)
 
@@ -200,19 +200,19 @@ const Checkout = () => {
                                                 </td>
 
                                                 <td className={"text-nowrap p-3 border-r-2 border-gray-600 text-[13px]"}>
-                                                    <span className={"text-blue-white"}>{(totalPriceCalculator(productID?.price, productID?.discount, count, services)).toLocaleString('fa-IR')}</span> تومان
+                                                    <span className={"text-blue-white"}>{(totalPriceCalculator(productID?.price, productID?.discount, count, services)).toLocaleString('fa-IR')}</span> ريال
                                                 </td>
                                             </tr>)
                                         )
                                     }
 
                                     <TableData title={"حمل و نقل"}><p className={"max-w-70 text-wrap"}>ارسال توسط تیپاکس، اتوبوس، باربری به تشخیص فروشگاه (پس کرایه)</p></TableData>
-                                    <TableData title={"مجموع (قیمت نهایی)"}><p className={"max-w-70 text-wrap"}><span className={"text-blue-white"}>{sumOfProductsWithDiscount.toLocaleString('fa-IR')}</span> تومان</p></TableData>
+                                    <TableData title={"مجموع (قیمت نهایی)"}><p className={"max-w-70 text-wrap"}><span className={"text-blue-white"}>{sumOfProductsWithDiscount.toLocaleString('fa-IR')}</span> ريال</p></TableData>
                                 </tbody>
 
                             </table>
 
-                            <p className="border leading-[32px] text-description-text rounded-md border-gold/25 p-3">مشتری عزیز، المنتجاتی که بالای 100 میلیون تومان هستند با درگاه پرداخت نمی توان آن ها را پرداخت کرد، لطفا برای گرفتن رمز التعريف حساب و یا راهنمایی بیشتر با رمز التعريف های 90909090909 ، 0909090909 تماس بگیرید.</p>
+                            <p className="border leading-[32px] text-description-text rounded-md border-gold/25 p-3">مشتری عزیز، المنتجاتی که بالای 100 میلیون ريال هستند با درگاه پرداخت نمی توان آن ها را پرداخت کرد، لطفا برای گرفتن رمز التعريف حساب و یا راهنمایی بیشتر با رمز التعريف های 90909090909 ، 0909090909 تماس بگیرید.</p>
 
                             <div className="text-description-text rounded-md p-3">
                                 <div className="flex items-center gap-2">

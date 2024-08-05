@@ -66,7 +66,7 @@ const Product = ({ data, productUpdater, productEditor }: { data: productDataTyp
 
             <div className="flex items-center gap-3 justify-center whitespace-pre text-title-text text-sm">
                 {data.discount && <div className="red-line-through text-panel-darkTitle ">{data.price.toLocaleString('fa-IR')}</div>}
-                <div className="text-panel-darkBlue">{Number(data.price - (data.price * (data.discount / 100))).toLocaleString('fa-IR')} <span className="text-[10px] text-panel-darkTitle">تومان</span></div>
+                <div className="text-panel-darkBlue">{Number(data.price - (data.price * (data.discount / 100))).toLocaleString('fa-IR')} <span className="text-[10px] text-panel-darkTitle">ريال</span></div>
             </div>
 
             <div className="text-center px-3 transition-all min-h-[50px] h-full line-clamp-2 text-panel-darkTitle break-all leading-[25px] my-4 ">{data.name}</div>

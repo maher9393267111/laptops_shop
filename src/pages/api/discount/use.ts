@@ -24,7 +24,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         if (!basketData) return res.status(421).json({ message: 'invalid basketID bro' })
 
-        const updatedBasketServices = { ...basketData.services, [`کد تخفیف ${isDiscountCodeValid.value} تومانی`]: isDiscountCodeValid.value * -1 } // add the discount price to the product services to update the total price(silly logic)
+        const updatedBasketServices = { ...basketData.services, [`کد تخفیف ${isDiscountCodeValid.value} ريالی`]: isDiscountCodeValid.value * -1 } // add the discount price to the product services to update the total price(silly logic)
 
         await BasketItemModel.findOneAndUpdate(
             { _id: basketID, userID },
@@ -34,7 +34,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         await ActiveDiscountModel.create({ code, userID })
 
-        return res.status(201).json({ message: `کد تخفیف ${isDiscountCodeValid.value.toLocaleString()} تومانی برای خرید شما اعمال شد🥲` })
+        return res.status(201).json({ message: `کد تخفیف ${isDiscountCodeValid.value.toLocaleString()} ريالی برای خرید شما اعمال شد🥲` })
 
     } catch (err) {
         console.log(err)

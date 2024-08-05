@@ -61,8 +61,8 @@ const ProductCart = ({ price, finalPrice, count, title, src, id }: ProductCartPr
                         <Image width={400} height={400} className="object-cover size-1/2 p-1" alt={title} src={src!} />
 
                         <div className="flex flex-col gap-1">
-                            <div>تعداد: <span className="text-white-red"> {price.toLocaleString('fa-IR')}</span> * {count} تومان </div>
-                            <div>مجموع: <span className="text-white-red">{finalPrice.toLocaleString('fa-IR')}</span> تومان</div>
+                            <div>تعداد: <span className="text-white-red"> {price.toLocaleString('fa-IR')}</span> * {count} ريال </div>
+                            <div>مجموع: <span className="text-white-red">{finalPrice.toLocaleString('fa-IR')}</span> ريال</div>
                         </div>
 
                     </div>
@@ -95,7 +95,7 @@ const ProductCart = ({ price, finalPrice, count, title, src, id }: ProductCartPr
                     <Link href={`/products/search/${id}`} className="flex-[8] hover:text-blue-white transition-all duration-200 cursor-pointer h-full m-auto text-title-text px-2 last:border-none">{title}</Link>
                 </td>
 
-                <td><span className="text-white-red">{price.toLocaleString('fa-IR')}</span> تومان</td>
+                <td><span className="text-white-red">{price.toLocaleString('fa-IR')}</span> ريال</td>
 
                 <td>
                     <div className="flex items-center flex-col gap-2">
@@ -107,7 +107,7 @@ const ProductCart = ({ price, finalPrice, count, title, src, id }: ProductCartPr
                     </div>
                 </td>
 
-                <td><span className="text-white-red">{finalPrice.toLocaleString('fa-IR')}</span> تومان</td>
+                <td><span className="text-white-red">{finalPrice.toLocaleString('fa-IR')}</span> ريال</td>
             </tr>
         </>
     )
