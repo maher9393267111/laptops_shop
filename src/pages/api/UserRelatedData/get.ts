@@ -39,10 +39,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         const userRelatedData: unknownObjProps<string | number | unknown[]> = {}
 
-        mongoose.set('strictPopulate', false); // if the 'productID' didn't exist to populate, we won't get any error
+      const cartItems = await BasketItemModel
+        .find({ $or: [{ creator: userData._id }, { user: userData._id }, { userID: userData._id }] })
+        .populate('productID') // Ensure 'productID' is correctly named in your schema
+        .exec();
 
+        console.log("ISERIDDDDD>?>?>?>?>" , userData?._id , cartItems)
+
+        mongoose.set('strictPopulate', false); // if the 'productID' didn't exist to populate, we won't get any error
+        let populatedData;
         for (const Model of userRelatedModels) {
-            let populatedData;
+           
+       
             try {
                 populatedData = await Model
                     .find({ $or: [{ creator: userData._id }, { user: userData._id }, { userID: userData._id }] })
@@ -54,6 +62,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             }
 
             userRelatedData[Model.modelName] = populatedData;
+            
+            
         }
 
         if (userData.role == "ADMIN") {
@@ -61,7 +71,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             userRelatedData.dashboardNotifications = adminNotifications
         }
 
-        return res.status(200).json({ userData, userRelatedData })
+        return res.status(200).json({ cartItems,userData, userRelatedData })
 
     } catch (err) {
         console.log(err)
