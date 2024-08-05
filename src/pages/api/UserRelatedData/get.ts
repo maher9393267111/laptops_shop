@@ -38,6 +38,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         const userRelatedModels = [NotificationModel, WishModel, BasketItemModel, transactionModel, CommentModel]
 
         const userRelatedData: unknownObjProps<string | number | unknown[]> = {}
+        mongoose.set('strictPopulate', false); // if the 'productID' didn't exist to populate, we won't get any error
+
 
       const cartItems = await BasketItemModel
         .find({ $or: [{ creator: userData._id }, { user: userData._id }, { userID: userData._id }] })
@@ -46,14 +48,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         console.log("ISERIDDDDD>?>?>?>?>" , userData?._id , cartItems)
 
-        mongoose.set('strictPopulate', false); // if the 'productID' didn't exist to populate, we won't get any error
+        
         let populatedData;
         for (const Model of userRelatedModels) {
            
        
             try {
                 populatedData = await Model
-                    .find({ $or: [{ creator: userData._id }, { user: userData._id }, { userID: userData._id }] })
+                    .find({ userID: userData._id })
                     .populate('productID') // Ensure 'productID' is correctly named in your schema
                     .exec();
             } catch (error) {
