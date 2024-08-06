@@ -41,6 +41,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
         mongoose.set('strictPopulate', false); // if the 'productID' didn't exist to populate, we won't get any error
 
+const cartItems =  await BasketItemModel
+.find({ $or: [{ creator: userData._id }, { user: userData._id }, { userID: userData._id }] })
+.populate('productID') // Ensure 'productID' is correctly named in your schema
+.exec();
+
+
         for (const Model of userRelatedModels) {
             let populatedData;
             try {
@@ -61,7 +67,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             userRelatedData.dashboardNotifications = adminNotifications
         }
 
-        return res.status(200).json({ userData, userRelatedData })
+        return res.status(200).json({cartItems, userData, userRelatedData })
 
     } catch (err) {
         console.log(err)
